@@ -1,0 +1,164 @@
+@import "../../index.scss";
+
+.menu {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+
+  button {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    border: 1px black solid;
+    background-color: transparent;
+    padding: 10px 20px;
+
+    @include rwd("385px") {
+      padding: 20px 30px;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      //   transition: 0.5s;
+    }
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+
+    margin: 150px;
+
+    @include rwd("385px") {
+      margin: 200px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 40px;
+      font-weight: 600;
+
+      color: black;
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+
+  @include rwd("0px") {
+    padding: 0 25px;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+
+    svg {
+      height: 50px;
+      aspect-ratio: 1 / 1;
+
+      cursor: pointer;
+    }
+  }
+
+  nav {
+    flex-direction: row;
+    gap: 30px;
+
+    @include rwd("0px") {
+      display: none;
+    }
+
+    @include tablet {
+      display: flex;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+
+      color: black;
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    font-size: 15px;
+    font-weight: 600;
+
+    border: 1px black solid;
+    background-color: transparent;
+    padding: 10px 30px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      //   transition: 0.5s;
+    }
+
+    @include rwd("0px") {
+      display: none;
+    }
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  .hamburger-menu {
+    @include rwd("0px") {
+      display: flex;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+}

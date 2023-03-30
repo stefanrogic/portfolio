@@ -1,0 +1,17 @@
+@import "../../index.scss";
+
+.home {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  @include rwd("0px") {
+    padding: 0 25px;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
+}
