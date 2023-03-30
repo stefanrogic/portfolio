@@ -7,7 +7,7 @@ import Project from "./pages/project/Project";
 import Portfolio from "./pages/portfolio/Portfolio";
 
 import { useState } from "react";
-import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Outlet, Link } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Outlet } from "react-router-dom";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
