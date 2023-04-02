@@ -11,7 +11,7 @@ const Navbar = ({ showMenu, onShowMenu }) => {
           <button onClick={() => onShowMenu((prev) => (prev = false))}>X</button>
           <nav>
             <Link to="/">HOME</Link>
-            <Link to="/portfolio">PORTFOLIO</Link>
+            <Link to="/projects">PORTFOLIO</Link>
             <Link to="">CONTACT</Link>
           </nav>
         </div>
@@ -24,7 +24,7 @@ const Navbar = ({ showMenu, onShowMenu }) => {
 
         <nav>
           <Link to="/">HOME</Link>
-          <Link to="/portfolio">PORTFOLIO</Link>
+          <Link to="/projects">PORTFOLIO</Link>
         </nav>
         <a href="mailto:stefanrogic@protonmail.com">
           <button>CONTACT</button>

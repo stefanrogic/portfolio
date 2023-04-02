@@ -3,19 +3,20 @@ import "./footer.scss";
 import { ReactComponent as MyLogo } from "../../assets/myLogo.svg";
 import { ReactComponent as LinkedInLogo } from "../../assets/linkedIn.svg";
 import { ReactComponent as GitHubLogo } from "../../assets/github.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-links">
-        <a href="" className="logo">
+        <Link to="/" className="logo">
           <MyLogo fill="white" />
-        </a>
+        </Link>
 
         <nav>
-          <a href="">HOME</a>
-          <a href="">PORTFOLIO</a>
-          <a href="">CONTACT</a>
+          <Link to="/">HOME</Link>
+          <Link to="/projects">PORTFOLIO</Link>
+          <a href="mailto:stefanrogic@protonmail.com">CONTACT</a>
         </nav>
 
         <div className="social">
