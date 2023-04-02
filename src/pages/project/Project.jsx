@@ -3,9 +3,14 @@ import "./project.scss";
 import ContactMe from "../../components/contactMe/ContactMe";
 
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Project = () => {
   const { id } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="project">
