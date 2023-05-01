@@ -137,10 +137,25 @@
       height: 15vh;
     }
 
-    div {
+    .left {
+      justify-content: start;
+    }
+
+    .right {
+      justify-content: end;
+    }
+
+    a {
+      width: 30%;
+      display: flex;
+
+      align-items: center;
+      text-decoration: none;
       padding: 0 40px;
 
       cursor: pointer;
+
+      color: black;
 
       &:hover {
         background-color: black;

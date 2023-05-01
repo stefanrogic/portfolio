@@ -3,6 +3,7 @@ import "./porfolio.scss";
 import ContactMe from "../../components/contactMe/ContactMe";
 import ProjectThumbnail from "../../components/projectThumbnail/ProjectThumbnail";
 
+import { projects } from "../../data/projects";
 import { useEffect } from "react";
 
 const Portfolio = () => {
@@ -13,8 +14,8 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <h1 className="title">MY PROJECTS</h1>
-      {[0, 1, 2].map((_, i) => (
-        <ProjectThumbnail key={i} project={i} />
+      {projects.map((project, i) => (
+        <ProjectThumbnail key={i} project={project} />
       ))}
       <ContactMe />
     </div>

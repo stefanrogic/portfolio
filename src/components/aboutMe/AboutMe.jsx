@@ -1,12 +1,16 @@
 import "./aboutMe.scss";
 
 import { Link } from "react-router-dom";
+import pfp from "../../assets/pfp.png";
+import pfpAlt from "../../assets/pfpAlt.png";
 
 const AboutMe = () => {
   return (
     <div className="about-me">
       <div className="line"></div>
-      <div className="left"></div>
+      <div className="left">
+        <img src={pfp} alt="pfp" />
+      </div>
       <div className="line"></div>
       <div className="right">
         <h1>ABOUT ME</h1>

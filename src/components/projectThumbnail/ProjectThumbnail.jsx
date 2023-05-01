@@ -2,15 +2,19 @@ import "./projectThumbnail.scss";
 
 import { Link } from "react-router-dom";
 
+/*project.id % 2 == 1 && "project-thumbnail-odd"*/
+
 const ProjectThumbnail = ({ project }) => {
   return (
-    <div className={`project-thumbnail ${project % 2 == 1 && "project-thumbnail-odd"}`}>
-      <div className="left"></div>
+    <div className={`project-thumbnail ${project.id % 2 == 1 && "project-thumbnail-odd"}`}>
+      <div className="left">
+        <img src={project.img} alt="project_img" />
+      </div>
       <div className="right">
-        <h2>PROJECT {project}</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet quas a, laboriosam quasi facere veniam reprehenderit mollitia voluptatum obcaecati corporis labore ipsam illo porro, nihil in odio perspiciatis dicta accusamus!</p>
+        <h2>{project.projectName}</h2>
+        <p>{project.shortDesc}</p>
 
-        <Link to={`/project/${project}`}>
+        <Link to={`/project/${project.id}`}>
           <button>MORE</button>
         </Link>
         <div className="project-line"></div>

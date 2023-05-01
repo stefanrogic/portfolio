@@ -2,11 +2,13 @@ import "./project.scss";
 
 import ContactMe from "../../components/contactMe/ContactMe";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { projects } from "../../data/projects";
 
 const Project = () => {
   const { id } = useParams();
+  const project = projects.find((p) => p.id == id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,10 +16,11 @@ const Project = () => {
 
   return (
     <div className="project">
+      {/* {JSON.stringify(project)} */}
       <div className="project-img"></div>
       <div className="project-info">
         <div className="left">
-          <h2>PROJECT {id}</h2>
+          <h2>{project.projectName}</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum unde, doloremque cupiditate dolor, assumenda veniam voluptates fuga molestiae accusamus nobis eum facilis cum! Ex commodi corrupti quas voluptatem aspernatur hic iste
             asperiores, quaerat unde. Obcaecati adipisci suscipit quis illo aut!
@@ -27,8 +30,12 @@ const Project = () => {
             <span>REACT APP</span>
           </div>
           <div className="buttons">
-            <button>VISIT</button>
-            <button>CODE</button>
+            <a href={project.visit} target="_blank">
+              <button>VISIT</button>
+            </a>
+            <a href={project.code} target="_blank">
+              <button>CODE</button>
+            </a>
           </div>
         </div>
         <div className="right">
@@ -47,12 +54,12 @@ const Project = () => {
         </div>
       </div>
       <div className="list-projects">
-        <div className="left">
+        <Link className="left" to={project.id === 0 ? "/project/3" : `/project/${project.id - 1}`}>
           <h1>PROJECT 3</h1>
-        </div>
-        <div className="right">
+        </Link>
+        <Link className="right" to={project.id === 2 ? "/project/0" : `/project/${project.id + 1}`}>
           <h1>PROJECT 2</h1>
-        </div>
+        </Link>
       </div>
       <ContactMe />
     </div>
