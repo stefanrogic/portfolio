@@ -1,3 +1,4 @@
+import devJobsMain from "../assets/projects/devJobs/devJobsMain.png";
 import devJobsLight from "../assets/projects/devJobs/devJobsLight.png";
 import devJobsDark from "../assets/projects/devJobs/devJobsDark.png";
 import devJobsMobile from "../assets/projects/devJobs/devJobsMobile.png";
@@ -17,6 +18,7 @@ export const projects = [
     visit: "https://dev-jobs-listings.netlify.app/",
     code: "https://github.com/Rasgrin/dev-jobs",
     tags: ["HTML", "SASS", "REACT"],
+    mainImg: { img: devJobsMain, name: "devJobsMain" },
     static: [
       { img: devJobsLight, name: "devJobsLight" },
       { img: devJobsDark, name: "devJobsDark" },
@@ -33,6 +35,7 @@ export const projects = [
     visit: "https://quote-roulette.netlify.app",
     code: "https://github.com/Rasgrin/quote-roulette",
     tags: ["HTML", "SASS", "REACT", "API"],
+    mainImg: { img: devJobsMain, name: "devJobsMain" },
     static: [{ img: "", name: "" }],
   },
   {
@@ -44,6 +47,7 @@ export const projects = [
     visit: "https://agedetective.netlify.app",
     code: "https://github.com/Rasgrin/age-detective",
     tags: ["HTML", "SASS", "REACT"],
+    mainImg: { img: devJobsMain, name: "devJobsMain" },
     static: [{ img: "", name: "" }],
   },
 ];

@@ -19,7 +19,9 @@ const Project = () => {
   return (
     <div className="project">
       {/* {JSON.stringify(project)} */}
-      <div className="project-img"></div>
+      <div className="project-img">
+        <img src={project.mainImg.img} alt={project.mainImg.name} />
+      </div>
       <div className="project-info">
         <div className="left">
           <h2>{project.projectName}</h2>
