@@ -1,16 +1,28 @@
 import devJobsLight from "../assets/projects/devJobs/devJobsLight.png";
+import devJobsDark from "../assets/projects/devJobs/devJobsDark.png";
+import devJobsMobile from "../assets/projects/devJobs/devJobsMobile.png";
+import devJobsSearch from "../assets/projects/devJobs/devJobsSearch.png";
+import devJobsNoResult from "../assets/projects/devJobs/devJobsNoResult.png";
+
 import ageDetectiveResult from "../assets/projects/ageDetective/ageDetectiveResult.png";
 import quoteRouletteRandom from "../assets/projects/quoteRoulette/quoteRouletteRandom.png";
 
 export const projects = [
   {
     id: 0,
-    projectName: "devJobs",
+    projectName: "Dev Jobs",
     shortDesc:
       "Fully responsive job board that allows users to easily search and filter job listings. This project showcases my skills in web development, specifically in creating a responsive and user-friendly interface. It features modern design with light and dark theme, and offers a variety of search and filtering options.",
     img: devJobsLight,
     visit: "https://dev-jobs-listings.netlify.app/",
     code: "https://github.com/Rasgrin/dev-jobs",
+    tags: ["HTML", "SASS", "REACT"],
+    static: [
+      { img: devJobsLight, name: "devJobsLight" },
+      { img: devJobsDark, name: "devJobsDark" },
+      { img: devJobsMobile, name: "devJobsMobile" },
+      { img: devJobsSearch, name: "devJobsSearch" },
+    ],
   },
   {
     id: 1,
@@ -20,6 +32,8 @@ export const projects = [
     img: quoteRouletteRandom,
     visit: "https://quote-roulette.netlify.app",
     code: "https://github.com/Rasgrin/quote-roulette",
+    tags: ["HTML", "SASS", "REACT", "API"],
+    static: [{ img: "", name: "" }],
   },
   {
     id: 2,
@@ -29,5 +43,7 @@ export const projects = [
     img: ageDetectiveResult,
     visit: "https://agedetective.netlify.app",
     code: "https://github.com/Rasgrin/age-detective",
+    tags: ["HTML", "SASS", "REACT"],
+    static: [{ img: "", name: "" }],
   },
 ];
