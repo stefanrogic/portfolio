@@ -1,7 +1,5 @@
 import devJobsMain from "../assets/projects/devJobs/devJobsMain.png";
-import devJobsLight from "../assets/projects/devJobs/devJobsLight.png";
-import devJobsDark from "../assets/projects/devJobs/devJobsDark.png";
-import devJobsMobile from "../assets/projects/devJobs/devJobsMobile.png";
+import devJobs from "../assets/projects/devJobs/devJobs.png";
 import devJobsSearch from "../assets/projects/devJobs/devJobsSearch.png";
 import devJobsNoResult from "../assets/projects/devJobs/devJobsNoResult.png";
 
@@ -21,16 +19,15 @@ export const projects = [
       "In addition to React, I also used Sass as a CSS preprocessor for the project. Sass allowed modular and maintainable CSS code by introducing several new features such as variables, nesting, and mixins. This made it easier to style the application and ensure a consistent look and feel across all pages.",
       "Overall, the Dev Jobs web application project demonstrates my skills in developing modern web applications using popular frontend technologies as well as my ability to create responsive and user-friendly interfaces, write maintainable and scalable code, and implement efficient styling using Sass.",
     ],
-    img: devJobsLight,
+    img: devJobs,
     visit: "https://dev-jobs-listings.netlify.app/",
     code: "https://github.com/Rasgrin/dev-jobs",
     tags: ["HTML", "SASS", "REACT"],
     mainImg: { img: devJobsMain, name: "devJobsMain" },
     static: [
-      { img: devJobsLight, name: "devJobsLight" },
-      { img: devJobsDark, name: "devJobsDark" },
-      { img: devJobsMobile, name: "devJobsMobile" },
+      { img: devJobs, name: "devJobs" },
       { img: devJobsSearch, name: "devJobsSearch" },
+      { img: devJobsNoResult, name: "devJobsNoResult" },
     ],
   },
   {
