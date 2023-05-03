@@ -15,8 +15,10 @@ const AboutMe = () => {
       <div className="right">
         <h1>ABOUT ME</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa pariatur dicta mollitia, quos minus obcaecati aliquam hic excepturi, debitis odio. Eius amet, asperiores fugiat repudiandae dignissimos exercitationem impedit harum
-          officia illum recusandae blanditiis! Molestiae quod nihil soluta perferendis quibusdam itaque blanditiis ad vitae, cumque, id aspernatur libero alias modi quia provident quis repellat cum iure dolorum esse sequi iusto?
+          My name is Stefan Rogic, an aspiring frontend developer with a passion for creating beautiful, user-friendly websites. <br />
+          <br />
+          My journey as a frontend developer began during my studies, where I discovered my love for designing and building websites. Since then, I've been honing my skills and expanding my knowledge in areas such as HTML, CSS, JavaScript, and
+          responsive design. I'm always on the lookout for new challenges and opportunities to learn.
         </p>
         <Link to="/projects">
           <button>PORTFOLIO</button>

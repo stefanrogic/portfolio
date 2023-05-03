@@ -47,7 +47,7 @@ export const projects = [
     id: 2,
     projectName: "Age Detective",
     shortDesc:
-      "Age Detective was my first React project. The goal was to create a simple, yet functional age calculator that could accurately determine a person's age in years, months, and days. I chose this project because it offered a great opportunity to practice my React skills while creating a useful tool  ",
+      "Age Detective was my first React project. The goal was to create a simple, yet functional age calculator that could accurately determine a person's age in years, months, and days. I chose this project because it offered a great opportunity to practice my React skills while creating a useful tool.",
     background: [``],
     img: ageDetectiveResult,
     visit: "https://agedetective.netlify.app",

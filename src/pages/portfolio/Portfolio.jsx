@@ -13,7 +13,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      <h1 className="title">MY PROJECTS</h1>
+      <h1 className="title">My Projects</h1>
       {projects.map((project, i) => (
         <ProjectThumbnail key={i} project={project} />
       ))}

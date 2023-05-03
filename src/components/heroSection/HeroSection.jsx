@@ -4,7 +4,7 @@ const HeroSection = ({ onScroll }) => {
   return (
     <div className="heroSection">
       <div>
-        <p>Hi, I’m Stefan Rogić and I enjoy building innovative and responsive web applications.</p>
+        <p>Hi, I’m Stefan and I enjoy building innovative and responsive web applications.</p>
 
         <button onClick={() => onScroll(".about-me")}>ABOUT ME</button>
       </div>
