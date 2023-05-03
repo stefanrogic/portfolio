@@ -43,12 +43,10 @@ const Project = () => {
         </div>
         <div className="right">
           <h2>Project Background</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore odio consectetur fugiat cumque aperiam praesentium adipisci nisi corrupti porro id earum dicta labore culpa nam veniam natus, amet inventore accusantium ipsam hic nihil
-            sed, quia veritatis doloremque? Autem dolorum natus saepe quam cumque itaque. Illo alias voluptate delectus tempore aperiam quos ducimus facere iure doloremque unde fugiat officiis sequi blanditiis itaque voluptates debitis qui,
-            consequatur quaerat excepturi nemo voluptatibus aliquam sed maxime autem? A, minima.
-          </p>
-          <h2>Static Previews</h2>
+          {project.background.map((bg, i) => (
+            <p key={i}>{bg}</p>
+          ))}
+          <h2 className="static">Static Previews</h2>
           <div className="images">
             {project.static.map((s, i) => (
               <div className="preview-img" key={i}>
