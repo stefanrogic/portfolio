@@ -3,16 +3,30 @@ import "./navbar.scss";
 import { ReactComponent as MyLogo } from "../../assets/myLogo.svg";
 import { Link } from "react-router-dom";
 
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+
 const Navbar = ({ showMenu, onShowMenu }) => {
   return (
     <>
       {showMenu && (
         <div className="menu">
-          <button onClick={() => onShowMenu((prev) => (prev = false))}>X</button>
+          <div className="button-container">
+            <button onClick={() => onShowMenu((prev) => (prev = false))}>
+              <CloseIcon />
+            </button>
+          </div>
+
           <nav>
-            <Link to="/">HOME</Link>
-            <Link to="/projects">PORTFOLIO</Link>
-            <Link to="">CONTACT</Link>
+            <Link to="/" onClick={() => onShowMenu((prev) => (prev = false))}>
+              HOME
+            </Link>
+            <Link to="/projects" onClick={() => onShowMenu((prev) => (prev = false))}>
+              PORTFOLIO
+            </Link>
+            <a href="mailto:stefanrogic@protonmail.com" onClick={() => onShowMenu((prev) => (prev = false))}>
+              CONTACT
+            </a>
           </nav>
         </div>
       )}
@@ -31,7 +45,7 @@ const Navbar = ({ showMenu, onShowMenu }) => {
         </a>
 
         <button className="hamburger-menu" onClick={() => onShowMenu((prev) => (prev = true))}>
-          MENU
+          <MenuIcon />
         </button>
       </header>
     </>

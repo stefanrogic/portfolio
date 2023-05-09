@@ -57,10 +57,10 @@ const Project = () => {
         </div>
       </div>
       <div className="list-projects">
-        <Link className="left" to={project.id === 0 ? "/project/2" : `/project/${project.id - 1}`}>
+        <Link className="left" to={project.id === 0 ? "/project/2" : `/project/${project.id - 1}`} onClick={() => window.scrollTo(0, 0)}>
           <h1>{previousProject.projectName}</h1>
         </Link>
-        <Link className="right" to={project.id === 2 ? "/project/0" : `/project/${project.id + 1}`}>
+        <Link className="right" to={project.id === 2 ? "/project/0" : `/project/${project.id + 1}`} onClick={() => window.scrollTo(0, 0)}>
           <h1>{nextProject.projectName}</h1>
         </Link>
       </div>

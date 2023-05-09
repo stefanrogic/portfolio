@@ -14,28 +14,32 @@
   align-items: center;
   background-color: #fafafa;
 
-  button {
-    margin-left: auto;
-    margin-right: 20px;
-    margin-top: 20px;
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 15vh;
 
-    font-size: 20px;
-    font-weight: 600;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 25px;
+      font-size: 20px;
+      font-weight: 600;
 
-    border: 1px black solid;
-    background-color: transparent;
-    padding: 10px 20px;
+      border: 1px black solid;
+      background-color: transparent;
+      padding: 15px;
 
-    @include rwd("385px") {
-      padding: 20px 30px;
-    }
+      cursor: pointer;
 
-    cursor: pointer;
-
-    &:hover {
-      background-color: black;
-      color: white;
-      //   transition: 0.5s;
+      &:hover {
+        background-color: black;
+        color: white;
+        //   transition: 0.5s;
+      }
     }
   }
 
@@ -133,7 +137,7 @@ header {
 
     border: 1px black solid;
     background-color: transparent;
-    padding: 10px 30px;
+    padding: 15px;
 
     cursor: pointer;
 

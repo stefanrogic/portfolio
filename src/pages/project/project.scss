@@ -80,6 +80,11 @@
         flex-direction: row;
         gap: 20px;
         margin-top: 75px;
+        justify-content: center;
+
+        @include rwd("1000px") {
+          justify-content: start;
+        }
 
         button {
           font-size: 15px;
@@ -155,30 +160,25 @@
     justify-content: space-between;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
+    margin-bottom: 50px;
 
     height: 75px;
+
+    @include rwd("700px") {
+      height: 10vh;
+    }
 
     @include rwd("1000px") {
       height: 15vh;
     }
 
-    .left {
-      justify-content: start;
-    }
-
-    .right {
-      justify-content: end;
-    }
-
     a {
-      width: 30%;
+      // width: 30%;
       display: flex;
 
-      align-items: center;
+      // align-items: center;
       text-decoration: none;
       padding: 0 40px;
-
-      cursor: pointer;
 
       color: black;
 
@@ -188,7 +188,13 @@
       }
 
       h1 {
-        font-size: 15px;
+        font-size: 20px;
+        margin: 0;
+
+        @include rwd("700px") {
+          font-size: 30px;
+          line-height: 40px;
+        }
 
         @include rwd("1000px") {
           font-size: 40px;
@@ -206,6 +212,7 @@
       justify-content: center;
       align-items: start;
       width: 50%;
+      text-align: start;
     }
 
     .right {
@@ -214,6 +221,7 @@
       justify-content: center;
       align-items: end;
       width: 50%;
+      text-align: end;
     }
   }
 }
