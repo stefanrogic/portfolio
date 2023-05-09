@@ -7,13 +7,12 @@ import pfpAlt from "../../assets/pfpAlt.png";
 const AboutMe = () => {
   return (
     <div className="about-me">
-      <div className="line"></div>
+      {/* <div className="line"></div> */}
       <div className="left">
         <img src={pfp} alt="pfp" />
       </div>
-      <div className="line"></div>
       <div className="right">
-        <h1>ABOUT ME</h1>
+        <h2>About Me</h2>
         <p>
           My name is Stefan Rogic, an aspiring frontend developer with a passion for creating beautiful, user-friendly websites. <br />
           <br />

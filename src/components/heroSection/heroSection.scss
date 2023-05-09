@@ -31,6 +31,7 @@
   div {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 30px;
     font-size: 40px;
     padding: 40px;
@@ -49,9 +50,13 @@
       }
     }
 
+    @include rwd("600px") {
+      align-items: start;
+    }
+
     button {
       font-weight: 600;
-
+      width: 200px;
       color: white;
 
       border: 1px rgb(255, 255, 255) solid;
@@ -71,7 +76,7 @@
 
       @include mobile {
         font-size: 20px;
-        height: 50px;
+        height: 75px;
       }
 
       @include rwd("600px") {
