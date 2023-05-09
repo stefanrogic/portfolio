@@ -41,7 +41,7 @@ const Navbar = ({ showMenu, onShowMenu }) => {
           <Link to="/projects">PORTFOLIO</Link>
         </nav>
         <a href="mailto:stefanrogic@protonmail.com">
-          <button>CONTACT</button>
+          <button className="contact-btn">CONTACT</button>
         </a>
 
         <button className="hamburger-menu" onClick={() => onShowMenu((prev) => (prev = true))}>
