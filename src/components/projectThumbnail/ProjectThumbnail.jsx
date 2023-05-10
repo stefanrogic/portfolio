@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 /*project.id % 2 == 1 && "project-thumbnail-odd"*/
 
-const ProjectThumbnail = ({ project }) => {
+const ProjectThumbnail = ({ project, currentImg }) => {
   return (
     <div className={`project-thumbnail ${project.id % 2 == 1 && "project-thumbnail-odd"}`}>
       <div className="left">

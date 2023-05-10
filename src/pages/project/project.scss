@@ -1,11 +1,13 @@
 @import "../../index.scss";
 
 .project {
+  position: relative;
   max-width: 1280px;
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
+
   gap: 5vh;
 
   @include rwd("0px") {
@@ -142,6 +144,8 @@
           display: flex;
           justify-content: center;
           align-items: center;
+
+          cursor: pointer;
           // background-color: grey;
 
           img {

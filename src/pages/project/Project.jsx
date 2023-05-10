@@ -3,13 +3,20 @@ import "./project.scss";
 import ContactMe from "../../components/contactMe/ContactMe";
 
 import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "../../data/projects";
+
+import ImageList from "../../components/imageList/ImageList";
 
 const Project = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id == id);
+
+  const [imageList, setImageList] = useState(false);
+  const [currentImg, setCurrentImg] = useState(0);
+
   const previousProject = project.id === 0 ? projects.find((p) => p.id === 2) : projects.find((p) => p.id === project.id - 1);
+
   const nextProject = project.id === 2 ? projects.find((p) => p.id === 0) : projects.find((p) => p.id === project.id + 1);
 
   useEffect(() => {
@@ -19,6 +26,7 @@ const Project = () => {
   return (
     <div className="project">
       {/* {JSON.stringify(project)} */}
+      {imageList && <ImageList onClose={setImageList} images={project.static} currentImg={currentImg} onList={setCurrentImg} />}
       <div className="project-img">
         <img src={project.mainImg.img} alt={project.mainImg.name} />
       </div>
@@ -49,7 +57,14 @@ const Project = () => {
           <h2 className="static">Static Previews</h2>
           <div className="images">
             {project.static.map((s, i) => (
-              <div className="preview-img" key={i}>
+              <div
+                className="preview-img"
+                key={i}
+                onClick={() => {
+                  setCurrentImg(i);
+                  setImageList(true);
+                }}
+              >
                 <img src={s.img} alt={s.name} />
               </div>
             ))}
