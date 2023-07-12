@@ -15,9 +15,9 @@ const Project = () => {
   const [imageList, setImageList] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
 
-  const previousProject = project.id === 0 ? projects.find((p) => p.id === 2) : projects.find((p) => p.id === project.id - 1);
+  const previousProject = project.id === 0 ? projects.find((p) => p.id === 3) : projects.find((p) => p.id === project.id - 1);
 
-  const nextProject = project.id === 2 ? projects.find((p) => p.id === 0) : projects.find((p) => p.id === project.id + 1);
+  const nextProject = project.id === 3 ? projects.find((p) => p.id === 0) : projects.find((p) => p.id === project.id + 1);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,7 +42,7 @@ const Project = () => {
 
           <div className="buttons">
             <a href={project.visit} target="_blank">
-              <button>VISIT</button>
+              <button>LIVE DEMO</button>
             </a>
             <a href={project.code} target="_blank">
               <button>CODE</button>
@@ -50,11 +50,11 @@ const Project = () => {
           </div>
         </div>
         <div className="right">
-          <h2>Project Background</h2>
-          {project.background.map((bg, i) => (
-            <p key={i}>{bg}</p>
-          ))}
-          <h2 className="static">Static Previews</h2>
+          {project.projectName === "Tera Supplements" ? "" : <h2>Project Background</h2>}
+          {project.projectName === "Tera Supplements" ? "" : project.background.map((bg, i) => <p key={i}>{bg}</p>)}
+          <h2 className="static" style={{ marginTop: project.projectName === "Tera Supplements" && "0" }}>
+            Static Previews
+          </h2>
           <div className="images">
             {project.static.map((s, i) => (
               <div
@@ -72,10 +72,10 @@ const Project = () => {
         </div>
       </div>
       <div className="list-projects">
-        <Link className="left" to={project.id === 0 ? "/project/2" : `/project/${project.id - 1}`} onClick={() => window.scrollTo(0, 0)}>
+        <Link className="left" to={project.id === 0 ? "/project/3" : `/project/${project.id - 1}`} onClick={() => window.scrollTo(0, 0)}>
           <h1>{previousProject.projectName}</h1>
         </Link>
-        <Link className="right" to={project.id === 2 ? "/project/0" : `/project/${project.id + 1}`} onClick={() => window.scrollTo(0, 0)}>
+        <Link className="right" to={project.id === 3 ? "/project/0" : `/project/${project.id + 1}`} onClick={() => window.scrollTo(0, 0)}>
           <h1>{nextProject.projectName}</h1>
         </Link>
       </div>

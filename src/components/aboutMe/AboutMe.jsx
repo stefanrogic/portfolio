@@ -14,7 +14,7 @@ const AboutMe = () => {
       <div className="right">
         <h2>About Me</h2>
         <p>
-          My name is Stefan Rogic, an aspiring frontend developer with a passion for creating beautiful, user-friendly websites. <br />
+          My name is Stefan Rogic, frontend developer with a passion for creating beautiful, user-friendly websites. <br />
           <br />
           My journey as a frontend developer began during my studies, where I discovered my love for designing and building websites. Since then, I've been honing my skills and expanding my knowledge in areas such as HTML, CSS, JavaScript, and
           responsive design. I'm always on the lookout for new challenges and opportunities to learn.

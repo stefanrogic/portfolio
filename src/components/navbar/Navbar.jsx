@@ -27,6 +27,9 @@ const Navbar = ({ showMenu, onShowMenu }) => {
             <a href="mailto:stefanrogic@protonmail.com" onClick={() => onShowMenu((prev) => (prev = false))}>
               CONTACT
             </a>
+            <a href="https://drive.google.com/file/d/1yFHb-VrMudSMHxJFvhAccIdZL-AgXwBB/view?usp=sharing" target="_blank" onClick={() => onShowMenu((prev) => (prev = false))}>
+              CV
+            </a>
           </nav>
         </div>
       )}
@@ -40,8 +43,8 @@ const Navbar = ({ showMenu, onShowMenu }) => {
           <Link to="/">HOME</Link>
           <Link to="/projects">PORTFOLIO</Link>
         </nav>
-        <a href="mailto:stefanrogic@protonmail.com">
-          <button className="contact-btn">CONTACT</button>
+        <a href="https://drive.google.com/file/d/1yFHb-VrMudSMHxJFvhAccIdZL-AgXwBB/view?usp=sharing" target="_blank">
+          <button className="contact-btn">CV</button>
         </a>
 
         <button className="hamburger-menu" onClick={() => onShowMenu((prev) => (prev = true))}>

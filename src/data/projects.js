@@ -12,9 +12,29 @@ import quoteRouletteMain from "../assets/projects/quoteRoulette/quoteRouletteMai
 import quoteRouletteRandom from "../assets/projects/quoteRoulette/quoteRouletteRandom.png";
 import quoteRouletteSearch from "../assets/projects/quoteRoulette/quoteRouletteSearch.png";
 
+import teraMain from "../assets/projects/tera/teraMain.png";
+import teraMainTop from "../assets/projects/tera/teraMainTop.png";
+import teraStore from "../assets/projects/tera/teraStore.png";
+
 export const projects = [
   {
     id: 0,
+    projectName: "Tera Supplements",
+    shortDesc:
+      "Incorporating React, Redux, and Framer Motion, built a captivating supplement web store with fully functional features. The site boasts a seamless user experience with a robust shopping cart system, allowing customers to effortlessly add, manage quantities, and proceed to checkout. Additionally, the implementation of user-friendly filtering options empowers users to easily navigate and find specific products based on their preferences.",
+    background: [""],
+    img: teraMain,
+    visit: "https://tera-supplements.netlify.app/",
+    code: "https://github.com/Rasgrin/tera-supplements",
+    tags: ["REACT", "REDUX", "SASS", "FRAMER MOTION"],
+    mainImg: { img: teraMainTop, name: "teraMainTop" },
+    static: [
+      { img: teraMain, name: "teraMain" },
+      { img: teraStore, name: "teraStore" },
+    ],
+  },
+  {
+    id: 1,
     projectName: "Dev Jobs",
     shortDesc:
       "Fully responsive job board that allows users to easily search and filter job listings. This project showcases my skills in web development, specifically in creating a responsive and user-friendly interface. It features modern design with light and dark theme, and offers a variety of search and filtering options.",
@@ -28,7 +48,8 @@ export const projects = [
     img: devJobs,
     visit: "https://dev-jobs-listings.netlify.app/",
     code: "https://github.com/Rasgrin/dev-jobs",
-    tags: ["HTML", "SASS", "REACT"],
+    tags: ["REACT", "SASS"],
+
     mainImg: { img: devJobsMain, name: "devJobsMain" },
     static: [
       { img: devJobs, name: "devJobs" },
@@ -37,7 +58,7 @@ export const projects = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     projectName: "Quote Roulette",
     shortDesc:
       "Random quote generator that uses a public API to fetch a random quote, which is displayed along with the author's name. With each click, a new quote is generated, offering users an endless supply of inspiration, wisdom, or humor. This project demonstrates my proficiency in working with APIs and integrating them into a functional web application.",
@@ -50,7 +71,7 @@ export const projects = [
     img: quoteRouletteRandom,
     visit: "https://quote-roulette.netlify.app",
     code: "https://github.com/Rasgrin/quote-roulette",
-    tags: ["HTML", "SASS", "REACT", "API"],
+    tags: ["REACT", "SASS", "API"],
     mainImg: { img: quoteRouletteMain, name: "quoteRouletteMain" },
     static: [
       { img: quoteRouletteRandom, name: "quoteRouletteRandom" },
@@ -58,7 +79,7 @@ export const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     projectName: "Age Detective",
     shortDesc:
       "Age Detective was my first React project. The goal was to create a simple, yet functional age calculator that could accurately determine a person's age in years, months, and days. I chose this project because it offered a great opportunity to practice my React skills while creating a useful tool.",
@@ -71,7 +92,7 @@ export const projects = [
     img: ageDetectiveResult,
     visit: "https://agedetective.netlify.app",
     code: "https://github.com/Rasgrin/age-detective",
-    tags: ["HTML", "SASS", "REACT"],
+    tags: ["REACT", "SASS"],
     mainImg: { img: ageDetectiveMain, name: "ageDetectiveMain" },
     static: [
       { img: ageDetectiveResult, name: "ageDetectiveResult" },

@@ -14,9 +14,14 @@ const ProjectThumbnail = ({ project, currentImg }) => {
         <h2>{project.projectName}</h2>
         <p>{project.shortDesc}</p>
 
-        <Link to={`/project/${project.id}`}>
-          <button>MORE</button>
-        </Link>
+        <div className="buttons">
+          <Link to={`/project/${project.id}`}>
+            <button>MORE</button>
+          </Link>
+          <Link to={project.visit} target="_blank">
+            <button>LIVE DEMO</button>
+          </Link>
+        </div>
         <div className="project-line"></div>
       </div>
     </div>
