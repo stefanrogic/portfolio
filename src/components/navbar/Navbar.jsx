@@ -1,57 +1,29 @@
 import "./navbar.scss";
 
-import { ReactComponent as MyLogo } from "../../assets/myLogo.svg";
-import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/myLogo.svg";
+import { motion } from "framer-motion";
 
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-
-const Navbar = ({ showMenu, onShowMenu }) => {
+const Navbar = () => {
   return (
-    <>
-      {showMenu && (
-        <div className="menu">
-          <div className="button-container">
-            <button onClick={() => onShowMenu((prev) => (prev = false))}>
-              <CloseIcon />
-            </button>
-          </div>
-
-          <nav>
-            <Link to="/" onClick={() => onShowMenu((prev) => (prev = false))}>
-              HOME
-            </Link>
-            <Link to="/projects" onClick={() => onShowMenu((prev) => (prev = false))}>
-              PORTFOLIO
-            </Link>
-            <a href="mailto:stefanrogic@protonmail.com" onClick={() => onShowMenu((prev) => (prev = false))}>
-              CONTACT
-            </a>
-            <a href="https://drive.google.com/file/d/1yFHb-VrMudSMHxJFvhAccIdZL-AgXwBB/view?usp=sharing" target="_blank" onClick={() => onShowMenu((prev) => (prev = false))}>
-              CV
-            </a>
-          </nav>
-        </div>
-      )}
-
-      <header>
-        <Link to="/" className="logo">
-          <MyLogo fill="black" />
-        </Link>
-
-        <nav>
-          <Link to="/">HOME</Link>
-          <Link to="/projects">PORTFOLIO</Link>
-        </nav>
-        <a href="https://drive.google.com/file/d/1yFHb-VrMudSMHxJFvhAccIdZL-AgXwBB/view?usp=sharing" target="_blank">
-          <button className="contact-btn">CV</button>
+    <nav>
+      <div className="default-margin" style={{ display: "flex", alignItems: "center" }}>
+        <a className="nav-logo" href="#">
+          <Logo fill="white" />
         </a>
-
-        <button className="hamburger-menu" onClick={() => onShowMenu((prev) => (prev = true))}>
-          <MenuIcon />
-        </button>
-      </header>
-    </>
+        <ul>
+          {["Projects", "Contact"].map((a, i) => (
+            <li key={i}>
+              <a href="#">{a}</a>
+            </li>
+          ))}
+        </ul>
+        <a href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            RESUME
+          </motion.button>
+        </a>
+      </div>
+    </nav>
   );
 };
 

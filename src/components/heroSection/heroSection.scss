@@ -1,88 +1,164 @@
 @import "../../index.scss";
 
 .heroSection {
+  margin-top: 50px;
+  position: relative;
+
   display: flex;
   flex-direction: row;
 
-  background-color: rgb(207, 207, 207);
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../../assets/heroSectionBg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-
-  @include rwd("0px") {
-    display: none;
-  }
-
   @include mobile {
-    display: flex;
     height: 70vh;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
   }
 
-  @include rwd("600px") {
-    align-items: end;
-    justify-content: start;
-    text-align: start;
+  @include rwd("1920px") {
+    height: 700px;
   }
 
-  div {
+  .left {
+    position: absolute;
+    left: 0;
+    top: 110px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    font-size: 40px;
-    padding: 40px;
 
-    p {
-      margin: 0;
+    .greet {
+      display: flex;
+      flex-direction: column;
 
-      color: white;
+      padding: 30px 0;
 
-      @include mobile {
-        font-size: 25px;
+      border-radius: 20px;
+      background-color: map-get($palette, bg);
+
+      h1 {
+        margin: 0;
+
+        font-size: 90px;
+        line-height: 90px;
+        font-weight: 700;
+
+        width: 700px;
+        padding-right: 50px;
+
+        color: #fff;
+        text-shadow: 0 0 50px #d8d8d8;
+        // -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+        // outline: none;
+        cursor: default;
+        &:hover {
+          animation: animateH1 6s linear infinite;
+
+          @keyframes animateH1 {
+            0%,
+            18%,
+            20%,
+            50.1%,
+            60%,
+            65.1%,
+            80%,
+            90.1%,
+            92% {
+              color: #757575;
+              text-shadow: none;
+            }
+
+            18.1%,
+            20.1%,
+            30%,
+            50%,
+            60.1%,
+            65%,
+            80.1%,
+            90%,
+            92.1%,
+            100% {
+              color: #fff;
+              text-shadow: 0 0 30px #d8d8d8;
+            }
+          }
+        }
       }
 
-      @include rwd("600px") {
-        font-size: 40px;
+      p {
+        margin: 20px 0 0 0;
+
+        font-size: 35px;
+        line-height: 35px;
+
+        color: #ff2e63;
+
+        cursor: default;
+
+        animation: animateP 5s linear infinite;
+
+        @keyframes animateP {
+          0%,
+          18%,
+          20%,
+          50.1%,
+          60%,
+          65.1%,
+          80%,
+          90.1%,
+          92% {
+            color: #580016;
+            text-shadow: none;
+          }
+
+          18.1%,
+          20.1%,
+          30%,
+          50%,
+          60.1%,
+          65%,
+          80.1%,
+          90%,
+          92.1%,
+          100% {
+            color: #ff2e63;
+
+            text-shadow: 0 0 30px #ff2e63;
+          }
+        }
       }
     }
 
-    @include rwd("600px") {
-      align-items: start;
+    .links {
+      display: flex;
+      margin-top: 100px;
+      align-items: center;
+      gap: 20px;
+
+      a {
+        svg {
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      button {
+        margin-right: 80px;
+        @extend .default-button;
+      }
     }
+  }
 
-    button {
-      font-weight: 600;
-      width: 200px;
-      color: white;
+  .right {
+    width: 70%;
+    height: inherit;
+    margin-left: auto;
 
-      border: 1px rgb(255, 255, 255) solid;
-      background-color: transparent;
+    border-radius: 20px;
+    background-color: rgb(61, 61, 61);
 
-      white-space: nowrap;
-      text-align: center;
+    img {
+      height: inherit;
+      width: 100%;
+      object-fit: cover;
 
-      cursor: pointer;
-
-      &:hover {
-        background-color: rgb(255, 255, 255);
-        border: 1px rgb(255, 255, 255) solid;
-        color: rgb(0, 0, 0);
-        //   transition: 0.5s;
-      }
-
-      @include mobile {
-        font-size: 20px;
-        height: 75px;
-      }
-
-      @include rwd("600px") {
-        width: 300px;
-        height: 75px;
-      }
+      border-radius: inherit;
     }
   }
 }
