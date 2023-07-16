@@ -13,8 +13,8 @@ const HeroSection = () => {
       <div className="heroSection">
         <div className="left">
           <div className="greet">
-            <motion.h1>Hello, my name is Stefan</motion.h1>
-            <motion.p>Frontend Developer</motion.p>
+            <motion.h1 className="greet-hello">Hello, my name is Stefan</motion.h1>
+            <motion.p className="greet-role">Frontend Developer</motion.p>
           </div>
           <div className="links">
             <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>

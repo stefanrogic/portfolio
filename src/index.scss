@@ -2,7 +2,7 @@
 
 $palette: (
   textLight: #ffffff,
-  textDark: #111111,
+  textDark: #000000,
   fg: #ff2e63,
   bg: #14171b,
 );
@@ -77,6 +77,6 @@ button {
 
   border-radius: 60px;
   border: none;
-  color: white;
+  color: map-get($palette, textDark);
   background-color: map-get($palette, fg);
 }
