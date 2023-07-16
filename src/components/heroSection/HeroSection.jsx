@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import heroImg from "../../assets/heroImg.png";
 
-const HeroSection = () => {
+const HeroSection = ({ onScroll }) => {
   return (
     <div className="default-margin">
       <div className="heroSection">
@@ -17,7 +17,7 @@ const HeroSection = () => {
             <motion.p className="greet-role">Frontend Developer</motion.p>
           </div>
           <div className="links">
-            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => onScroll(".projects-section")}>
               PROJECTS
             </motion.button>
             {/* <motion.a href="https://github.com/Rasgrin" target="_blank" whileTap={{ scale: 0.9 }}>
