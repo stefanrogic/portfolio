@@ -35,7 +35,8 @@ a {
 }
 
 button,
-input {
+input,
+textarea {
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -78,5 +79,5 @@ button {
   border-radius: 60px;
   border: none;
   color: map-get($palette, textDark);
-  background-color: map-get($palette, fg);
+  background-color: #3bf2f8;
 }

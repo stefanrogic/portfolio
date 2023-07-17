@@ -24,11 +24,10 @@ nav {
     gap: 50px;
 
     li {
-      a {
-        font-size: 25px;
-        font-weight: 500;
-        color: map-get($palette, textLight);
-      }
+      font-size: 25px;
+      font-weight: 500;
+      color: map-get($palette, textLight);
+      cursor: pointer;
     }
   }
 

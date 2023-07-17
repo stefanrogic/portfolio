@@ -1,0 +1,104 @@
+@import "../../index.scss";
+
+.contact-section {
+  padding-top: 70px;
+  margin-bottom: 150px;
+
+  .contact-heading {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin: 0 0 100px 0;
+
+    .contact-header {
+      margin: 0;
+      font-size: 90px;
+      line-height: 90px;
+      font-weight: 700;
+
+      // width: 700px;
+      padding-left: 50px;
+
+      // -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+      // outline: none;
+      cursor: default;
+
+      animation: animateContact 0.1s linear infinite;
+
+      @keyframes animateContact {
+        0% {
+          color: #8efbff;
+          text-shadow: 0 0 30px #00f5ff;
+        }
+
+        100% {
+          color: #3bf2f8;
+          text-shadow: 0 0 30px #3bf2f8;
+        }
+      }
+    }
+
+    .line {
+      flex: 1;
+      height: 10px;
+
+      border-radius: 10px;
+      animation: animateLine 0.1s linear infinite;
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    .inputs {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      input,
+      textarea {
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      input {
+        margin-bottom: 20px;
+        height: 50px;
+        padding: 0 20px;
+        border-radius: 50px;
+      }
+
+      textarea {
+        padding: 20px;
+        border-radius: 20px;
+        resize: none;
+      }
+
+      button {
+        @extend .default-button;
+        width: 100%;
+        margin-top: 50px;
+      }
+    }
+
+    .links {
+      width: 40%;
+
+      border-radius: 20px;
+      background-color: #191825;
+    }
+  }
+}

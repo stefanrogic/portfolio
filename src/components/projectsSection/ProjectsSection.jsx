@@ -16,7 +16,10 @@ const ProjectsSection = () => {
   return (
     <div className="default-margin">
       <div className="projects-section">
-        <motion.h1 className="projects-header">PROJECTS</motion.h1>
+        <div className="projects-heading">
+          <motion.h1 className="projects-header">PROJECTS</motion.h1>
+          <div className="line"></div>
+        </div>
 
         <div className="project-list">
           {projects.map((p, i) => (

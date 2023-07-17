@@ -3,7 +3,7 @@ import "./navbar.scss";
 import { ReactComponent as Logo } from "../../assets/myLogo.svg";
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ onScroll }) => {
   return (
     <nav>
       <div className="default-margin" style={{ display: "flex", alignItems: "center" }}>
@@ -12,8 +12,8 @@ const Navbar = () => {
         </a>
         <ul>
           {["Projects", "Contact"].map((a, i) => (
-            <li key={i}>
-              <a href="#">{a}</a>
+            <li key={i} onClick={() => (a === "Projects" ? onScroll(".projects-section") : onScroll(".contact-section"))}>
+              {a}
             </li>
           ))}
         </ul>
