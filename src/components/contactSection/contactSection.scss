@@ -1,8 +1,8 @@
 @import "../../index.scss";
 
 .contact-section {
-  padding-top: 70px;
-  margin-bottom: 150px;
+  padding-top: 100px;
+  margin-bottom: 160px;
 
   .contact-heading {
     display: flex;
@@ -114,7 +114,7 @@
 
         span {
           display: flex;
-          gap: 10px;
+          gap: 20px;
           align-items: center;
           font-size: 40px;
 
@@ -126,7 +126,7 @@
 
         a {
           font-size: 25px;
-          color: white;
+          color: #3bf2f8;
           text-decoration: underline;
         }
       }

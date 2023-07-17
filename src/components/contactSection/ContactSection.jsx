@@ -31,7 +31,7 @@ const ContactSection = () => {
           <div className="links">
             <div className="link">
               <span>
-                <EmailIcon fill="white" /> Email
+                <EmailIcon style={{ color: "white", height: "50px", width: "50px" }} /> Email
               </span>
               <a href="mailto:stefanrogic@protonmail.com" target="_blank">
                 stefanrogic@protonmail.com
@@ -49,7 +49,7 @@ const ContactSection = () => {
 
             <div className="link">
               <span>
-                <GitHub fill="white" /> Github
+                <GitHub fill="white" /> GitHub
               </span>
               <a href="https://github.com/Rasgrin" target="_blank">
                 linkedin.com/in/stefanrogic/

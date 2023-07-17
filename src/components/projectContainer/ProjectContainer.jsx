@@ -31,7 +31,7 @@ const ProjectContainer = ({ data }) => {
       </div>
 
       <div className="right">
-        <motion.img src={heroImg} alt="hero-img" whileHover={{ scale: 1.1 }} />
+        <motion.img src={data.logo ? data.logo.img : heroImg} alt={data.logo ? data.logo.name : "hero-img"} whileHover={{ scale: 1.1 }} />
       </div>
     </div>
   );

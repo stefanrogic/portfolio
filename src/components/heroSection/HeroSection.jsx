@@ -11,13 +11,13 @@ const HeroSection = ({ onScroll }) => {
   return (
     <div className="default-margin">
       <div className="heroSection">
-        <div className="left">
+        <motion.div className="left" initial={{ opacity: 0, x: -500 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <div className="greet">
             <motion.h1 className="greet-hello">Hello, my name is Stefan</motion.h1>
             <motion.p className="greet-role">Frontend Developer</motion.p>
           </div>
           <div className="links">
-            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => onScroll(".projects-section")}>
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} initial={{ opacity: 0, x: -500 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 1 }} onClick={() => onScroll(".projects-section")}>
               PROJECTS
             </motion.button>
             {/* <motion.a href="https://github.com/Rasgrin" target="_blank" whileTap={{ scale: 0.9 }}>
@@ -27,11 +27,11 @@ const HeroSection = ({ onScroll }) => {
               <LinkedIn fill="white" />
             </motion.a> */}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="right">
+        <motion.div className="right" initial={{ opacity: 0, x: 500 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
           <motion.img src={heroImg} alt="hero-img" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

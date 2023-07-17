@@ -1,5 +1,9 @@
 import "./App.scss";
+
+import { motion } from "framer-motion";
+
 import ContactSection from "./components/contactSection/ContactSection";
+import Footer from "./components/footer/Footer";
 import HeroSection from "./components/heroSection/HeroSection";
 import Navbar from "./components/navbar/Navbar";
 import ProjectsSection from "./components/projectsSection/ProjectsSection";
@@ -15,8 +19,11 @@ function App() {
     <div className="App">
       <Navbar onScroll={handleScroll} />
       <HeroSection onScroll={handleScroll} />
-      <ProjectsSection />
-      <ContactSection />
+      <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{ duration: 0.5, delay: 2 }}>
+        <ProjectsSection />
+        <ContactSection />
+        <Footer onScroll={handleScroll} />
+      </motion.div>
     </div>
   );
 }
