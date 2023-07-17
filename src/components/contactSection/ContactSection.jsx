@@ -45,7 +45,7 @@ const ContactSection = () => {
           </form>
 
           <div className="links">
-            <div className="link">
+            <div className="link" style={{ paddingLeft: "20px" }}>
               <span>
                 <EmailIcon style={{ color: "white", height: "50px", width: "50px" }} /> Email
               </span>
