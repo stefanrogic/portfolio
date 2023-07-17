@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const Navbar = ({ onScroll }) => {
   return (
-    <nav>
-      <motion.div className="default-margin" style={{ display: "flex", alignItems: "center" }} initial={{ opacity: 0, y: -800 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 1.5 }}>
+    <motion.nav initial={{ opacity: 0, y: -800 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 1.5 }}>
+      <div className="default-margin" style={{ display: "flex", alignItems: "center" }}>
         <a className="nav-logo" href="https://stefan-rogic.netlify.app/">
           <Logo fill="white" />
         </a>
@@ -22,8 +22,8 @@ const Navbar = ({ onScroll }) => {
             RESUME
           </motion.button>
         </a>
-      </motion.div>
-    </nav>
+      </div>
+    </motion.nav>
   );
 };
 

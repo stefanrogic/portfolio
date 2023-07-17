@@ -58,8 +58,8 @@ const ContactSection = () => {
               <span>
                 <LinkedIn fill="white" /> LinkedIn
               </span>
-              <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank">
-                linkedin.com/in/stefanrogic/
+              <a href="https://www.linkedin.com/in/stefanrogic" target="_blank">
+                linkedin.com/in/stefanrogic
               </a>
             </div>
 
@@ -68,7 +68,7 @@ const ContactSection = () => {
                 <GitHub fill="white" /> GitHub
               </span>
               <a href="https://github.com/Rasgrin" target="_blank">
-                linkedin.com/in/stefanrogic/
+                linkedin.com/in/stefanrogic
               </a>
             </div>
           </div>
