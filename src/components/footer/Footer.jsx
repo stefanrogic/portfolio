@@ -1,7 +1,7 @@
 import "./footer.scss";
 
 import { ReactComponent as Logo } from "../../assets/myLogo.svg";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 import { ReactComponent as LinkedIn } from "../../assets/linkedIn.svg";
 import { ReactComponent as GitHub } from "../../assets/github.svg";
@@ -10,7 +10,7 @@ const Footer = ({ onScroll }) => {
   return (
     <footer>
       <div className="default-margin" style={{ display: "flex", width: "100%", alignItems: "center" }}>
-        <a className="nav-logo" href="#">
+        <a className="nav-logo" onClick={() => onScroll("nav")}>
           <Logo fill="white" />
         </a>
         <ul>

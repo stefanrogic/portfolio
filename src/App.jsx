@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Navbar onScroll={handleScroll} />
       <HeroSection onScroll={handleScroll} />
-      <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{ duration: 0.5, delay: 2 }}>
+      <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{ duration: 0.5, delay: 2.5 }}>
         <ProjectsSection />
         <ContactSection />
         <Footer onScroll={handleScroll} />
