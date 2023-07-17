@@ -1,6 +1,10 @@
 import "./contactSection.scss";
 
 import { motion } from "framer-motion";
+import { ReactComponent as LinkedIn } from "../../assets/linkedIn.svg";
+import { ReactComponent as GitHub } from "../../assets/github.svg";
+
+import EmailIcon from "@mui/icons-material/Email";
 
 const ContactSection = () => {
   return (
@@ -18,7 +22,7 @@ const ContactSection = () => {
             <span>Email</span>
             <input type="text" placeholder="Enter your email..." />
             <span>Message</span>
-            <textarea name="message" id="" cols="10" rows="8" placeholder="Enter your message..."></textarea>
+            <textarea name="message" id="" rows="5" placeholder="Enter your message..."></textarea>
             <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
               SEND
             </motion.button>
@@ -26,8 +30,30 @@ const ContactSection = () => {
 
           <div className="links">
             <div className="link">
-              <span>LinkedIn</span>
-              <a href="https://www.linkedin.com/in/stefanrogic/">linkedin.com/in/stefanrogic/</a>
+              <span>
+                <EmailIcon fill="white" /> Email
+              </span>
+              <a href="mailto:stefanrogic@protonmail.com" target="_blank">
+                stefanrogic@protonmail.com
+              </a>
+            </div>
+
+            <div className="link">
+              <span>
+                <LinkedIn fill="white" /> LinkedIn
+              </span>
+              <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank">
+                linkedin.com/in/stefanrogic/
+              </a>
+            </div>
+
+            <div className="link">
+              <span>
+                <GitHub fill="white" /> Github
+              </span>
+              <a href="https://github.com/Rasgrin" target="_blank">
+                linkedin.com/in/stefanrogic/
+              </a>
             </div>
           </div>
         </div>
