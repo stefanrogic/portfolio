@@ -19,6 +19,7 @@ const ProjectContainer = ({ data }) => {
 
   return (
     <>
+      {/* TODO: ADD DETAILED DESCRIPTION AND IMAGES FOR ALL PROJECTS (POPUP WINDOW) */}
       <motion.div ref={ref} className="project-container" style={{ flexDirection: (data.id === 0 || data.id === 2) && "row-reverse" }} animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5, delay: 0.5 }}>
         <div className="left">
           <div className="project-info" style={{ alignItems: (data.id === 0 || data.id === 2) && " flex-end" }}>

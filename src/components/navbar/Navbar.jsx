@@ -11,6 +11,7 @@ const Navbar = ({ onScroll }) => {
           <Logo fill="white" />
         </a>
         <ul>
+          {/* TODO: ADD ABOUT PAGE */}
           {["Projects", "Contact"].map((a, i) => (
             <li key={i} onClick={() => (a === "Projects" ? onScroll(".projects-section") : onScroll(".contact-section"))}>
               {a}
