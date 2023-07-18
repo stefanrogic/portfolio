@@ -9,16 +9,19 @@
   @include mobile {
     flex-direction: column-reverse;
     gap: 20px;
+    margin-bottom: 50px;
   }
 
   @include tablet {
     gap: 30px;
+    margin-bottom: 70px;
   }
 
   @include desktop {
     height: 500px;
     flex-direction: row;
     gap: 50px;
+    margin-bottom: 150px;
   }
 
   .left {
@@ -60,7 +63,7 @@
       .project-alt {
         line-height: 35px;
 
-        color: #fd4976;
+        color: #ff2e63;
 
         cursor: pointer;
 
@@ -189,12 +192,25 @@
 
 .separator {
   margin-bottom: 50px;
-  height: 10px;
   width: 50%;
   align-self: center;
 
   border-radius: 10px;
   animation: animateSeparator 0.1s linear infinite;
+
+  @include mobile {
+    margin-bottom: 50px;
+    height: 5px;
+  }
+
+  @include tablet {
+    margin-bottom: 70px;
+    height: 10px;
+  }
+
+  @include desktop {
+    margin-bottom: 150px;
+  }
 
   @keyframes animateSeparator {
     0% {

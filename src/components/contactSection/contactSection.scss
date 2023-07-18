@@ -4,22 +4,34 @@
   margin-bottom: 160px;
 
   @include mobile {
-    padding-top: 30px;
+    padding-top: 70px;
+    overflow-x: hidden;
   }
 
   @include tablet {
-    padding-top: 50px;
+    padding-top: 120px;
   }
 
   @include desktop {
-    padding-top: 70px;
+    overflow-x: inherit;
   }
 
   .contact-heading {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin: 0 0 100px 0;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 100px;
+    }
 
     .contact-header {
       margin: 0;
@@ -154,12 +166,11 @@
 
       @include mobile {
         width: 100%;
-        align-items: flex-start;
+        align-items: center;
       }
 
       @include desktop {
         width: 40%;
-        align-items: center;
       }
 
       .link {
@@ -173,10 +184,15 @@
           align-items: center;
 
           @include mobile {
+            font-size: 40px;
+            justify-content: center;
           }
 
           @include tablet {
-            font-size: 40px;
+          }
+
+          @include desktop {
+            justify-content: flex-start;
           }
 
           svg {
@@ -190,7 +206,7 @@
         }
 
         a {
-          color: #fd4976;
+          color: #ff2e63;
           text-decoration: underline;
 
           @include mobile {

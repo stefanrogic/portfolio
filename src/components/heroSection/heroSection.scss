@@ -1,33 +1,21 @@
 @import "../../index.scss";
 
 .heroSection {
-  margin-top: 80px;
-  margin-bottom: 80px;
   position: relative;
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   @include mobile {
-    height: 80vh;
-    margin-top: 30px;
-  }
-
-  @include tablet {
-    height: 85vh;
-    margin-top: 30px;
-  }
-
-  @include desktop {
-    height: 70vh;
-    margin-top: 80px;
+    height: 92vh;
   }
 
   @include rwd("1920px") {
     height: 700px;
+    margin-top: 50px;
   }
-
-  // overflow-x: hidden;
 
   .left {
     position: absolute;
@@ -44,8 +32,12 @@
 
     @include rwd("1000px") {
       left: 0;
-      top: 110px;
+      top: 25%;
       transform: none;
+    }
+
+    @include rwd("1920px") {
+      top: 15%;
     }
 
     .greet {
@@ -195,20 +187,23 @@
   }
 
   .right {
-    height: inherit;
-
     overflow: hidden;
 
     border-radius: 20px;
     background-color: rgb(61, 61, 61);
 
     @include mobile {
+      height: 84vh;
       width: 100%;
     }
 
     @include rwd("1400px") {
       width: 70%;
       margin-left: auto;
+    }
+
+    @include rwd("1920px") {
+      height: auto;
     }
 
     img {

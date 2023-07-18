@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ overflowY: showMobileMenu && "hidden" }}>
       {showMobileMenu && <MobileMenu onScroll={handleScroll} onClick={setShowMobileMenu} />}
       <Navbar onScroll={handleScroll} onClick={setShowMobileMenu} />
       <HeroSection onScroll={handleScroll} />

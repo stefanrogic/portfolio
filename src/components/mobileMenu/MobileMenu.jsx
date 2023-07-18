@@ -3,7 +3,7 @@ import "./mobileMenu.scss";
 const MobileMenu = ({ onScroll, onClick }) => {
   return (
     <div className="mobile-menu" onClick={() => onClick(false)}>
-      <div className="default-margin" style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
+      <div className="default-margin">
         <ul className="menu-ul">
           {["PROJECTS", "CONTACT"].map((a, i) => (
             <li key={i} onClick={() => (a === "PROJECTS" ? onScroll(".projects-section") : onScroll(".contact-section"))}>

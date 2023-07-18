@@ -9,22 +9,10 @@ import { ReactComponent as GitHub } from "../../assets/github.svg";
 const Footer = ({ onScroll }) => {
   return (
     <footer>
-      <div className="default-margin" style={{ display: "flex", width: "100%", alignItems: "center" }}>
-        <a className="nav-logo" onClick={() => onScroll("nav")}>
-          <Logo fill="white" />
-        </a>
-        <ul>
-          {["Projects", "Contact"].map((a, i) => (
-            <li key={i} onClick={() => (a === "Projects" ? onScroll(".projects-section") : onScroll(".contact-section"))}>
-              {a}
-            </li>
-          ))}
-          <li>
-            <a href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
-              Resume
-            </a>
-          </li>
-        </ul>
+      <div className="default-margin" style={{ display: "flex", width: "100%", alignItems: "center", gap: "30px" }}>
+        <p>
+          Built using <a href="https://react.dev/">React</a>, <a href="https://sass-lang.com/">Sass</a> and <a href="https://www.framer.com/motion/">Framer Motion</a>.
+        </p>
 
         <div className="socials">
           <a href="https://www.linkedin.com/in/stefanrogic/" target="_blank">
