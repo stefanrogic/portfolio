@@ -13,24 +13,20 @@ const ProjectContainer = ({ data }) => {
   const isInViewSeparator = useInView(refSeparator, { once: true });
 
   const variants = {
-    hidden: { opacity: 0, x: data.id === 0 || data.id === 2 ? -800 : 800 },
+    hidden: { opacity: 0, x: data.id === 0 || data.id === 2 ? "-50vw" : "50vw" },
     visible: { opacity: 1, x: 0 },
   };
 
   return (
     <>
       {/* TODO: ADD DETAILED DESCRIPTION AND IMAGES FOR ALL PROJECTS (POPUP WINDOW) */}
-      <motion.div ref={ref} className="project-container" style={{ flexDirection: (data.id === 0 || data.id === 2) && "row-reverse" }} animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5, delay: 0.5 }}>
+      <motion.div ref={ref} className={`project-container ${data.id === 0 || data.id === 2 ? "project-even" : ""}`} animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5, delay: 0.5 }}>
         <div className="left">
-          <div className="project-info" style={{ alignItems: (data.id === 0 || data.id === 2) && " flex-end" }}>
-            <motion.h1 className="project-name" style={{ textAlign: (data.id === 0 || data.id === 2) && "right" }}>
-              {data.name}
-            </motion.h1>
-            <motion.p className="project-alt" style={{ textAlign: (data.id === 0 || data.id === 2) && "right" }}>
-              {data.alt}
-            </motion.p>
+          <div className="project-info">
+            <motion.h1 className="project-name">{data.name}</motion.h1>
+            <motion.p className="project-alt">{data.alt}</motion.p>
           </div>
-          <div className="buttons" style={{ marginLeft: (data.id === 0 || data.id === 2) && "auto" }}>
+          <div className="buttons">
             <a href={data.demo} target="_blank">
               <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 LIVE DEMO

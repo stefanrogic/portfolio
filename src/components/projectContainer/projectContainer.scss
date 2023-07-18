@@ -2,20 +2,37 @@
 
 .project-container {
   display: flex;
-  gap: 50px;
-  height: 500px;
+
+  height: auto;
   margin-bottom: 50px;
 
-  .left {
-    margin-top: auto;
-    width: 50%;
+  @include mobile {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
 
+  @include tablet {
+    gap: 30px;
+  }
+
+  @include desktop {
+    height: 500px;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .left {
     display: flex;
     flex-direction: column;
+
+    @include desktop {
+      width: 50%;
+    }
 
     .project-info {
       display: flex;
       flex-direction: column;
+      margin-top: auto;
 
       border-radius: 20px;
       background-color: map-get($palette, bg);
@@ -23,7 +40,6 @@
       .project-name {
         margin: 0;
 
-        font-size: 60px;
         line-height: 60px;
         font-weight: 700;
 
@@ -31,31 +47,52 @@
         color: #ffe8e8;
 
         cursor: pointer;
+
+        @include mobile {
+          font-size: 8vw;
+        }
+
+        @include tablet {
+          font-size: 60px;
+        }
       }
 
       .project-alt {
-        margin: 20px 0 0 0;
-
-        font-size: 35px;
         line-height: 35px;
 
         color: #fd4976;
-        // text-shadow: 0 0 50px #fd4976;
 
         cursor: pointer;
+
+        @include mobile {
+          margin: 0;
+          font-size: 5vw;
+        }
+
+        @include tablet {
+          margin: 20px 0 0 0;
+          font-size: 35px;
+        }
       }
     }
 
     .buttons {
-      margin-top: 50px;
       display: flex;
+
       flex-direction: row;
-      gap: 30px;
-      align-items: center;
+
+      @include mobile {
+        margin-top: 20px;
+        gap: 15px;
+      }
+
+      @include tablet {
+        margin-top: 50px;
+        gap: 30px;
+      }
 
       button {
         @extend .default-button;
-
         color: map-get($palette, fg);
         background-color: transparent;
         border: 1px solid map-get($palette, fg);
@@ -65,14 +102,29 @@
           background-color: map-get($palette, fg);
           border: none;
         }
+
+        @include mobile {
+          width: 120px;
+          height: 50px;
+          font-size: 15px;
+        }
+
+        @include tablet {
+          width: 170px;
+          height: 60px;
+
+          font-size: 20px;
+        }
       }
     }
   }
 
   .right {
-    width: 50%;
     height: inherit;
     margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border-radius: 20px;
     background-color: rgb(61, 61, 61);
@@ -81,12 +133,56 @@
 
     cursor: pointer;
 
+    @include mobile {
+      width: 100%;
+      aspect-ratio: 1 /1;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+
     img {
       height: inherit;
-      width: 100%;
+
       object-fit: cover;
 
       border-radius: inherit;
+
+      @include mobile {
+        width: 200%;
+      }
+
+      @include desktop {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.project-even {
+  @include desktop {
+    flex-direction: row-reverse;
+  }
+
+  .left {
+    .project-info {
+      @include desktop {
+        align-items: flex-end;
+      }
+
+      .project-name,
+      .project-alt {
+        @include desktop {
+          text-align: right;
+        }
+      }
+    }
+
+    .buttons {
+      @include desktop {
+        margin-left: auto;
+      }
     }
   }
 }

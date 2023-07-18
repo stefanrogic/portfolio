@@ -1,8 +1,19 @@
 @import "../../index.scss";
 
 .contact-section {
-  padding: 100px 30px 0 30px;
   margin-bottom: 160px;
+
+  @include mobile {
+    padding-top: 30px;
+  }
+
+  @include tablet {
+    padding-top: 50px;
+  }
+
+  @include desktop {
+    padding-top: 70px;
+  }
 
   .contact-heading {
     display: flex;
@@ -16,11 +27,23 @@
       line-height: 90px;
       font-weight: 700;
 
-      // width: 700px;
-      padding-left: 50px;
+      line-height: 90px;
+      font-weight: 700;
 
-      // -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
-      // outline: none;
+      @include mobile {
+        font-size: 45px;
+        padding-left: 20px;
+      }
+
+      @include tablet {
+        font-size: 70px;
+      }
+
+      @include desktop {
+        font-size: 90px;
+        padding-left: 50px;
+      }
+
       cursor: default;
 
       animation: animateContact 0.1s linear infinite;
@@ -40,22 +63,44 @@
 
     .line {
       flex: 1;
-      height: 10px;
 
       border-radius: 10px;
       animation: animateLine 0.1s linear infinite;
+
+      @include mobile {
+        height: 5px;
+      }
+
+      @include tablet {
+        height: 10px;
+      }
     }
   }
 
   .main {
     display: flex;
-    flex-direction: row;
+
     gap: 50px;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include desktop {
+      flex-direction: row;
+    }
+
     .inputs {
-      width: 60%;
       display: flex;
       flex-direction: column;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include desktop {
+        width: 60%;
+      }
 
       span {
         margin-bottom: 10px;
@@ -101,11 +146,21 @@
       flex-direction: column;
       // justify-content: center;
       padding-top: 40px;
-      align-items: center;
+
       gap: 50px;
 
       border-radius: 20px;
       // background-color: #2a2f35;
+
+      @include mobile {
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      @include desktop {
+        width: 40%;
+        align-items: center;
+      }
 
       .link {
         display: flex;
@@ -116,7 +171,13 @@
           display: flex;
           gap: 20px;
           align-items: center;
-          font-size: 40px;
+
+          @include mobile {
+          }
+
+          @include tablet {
+            font-size: 40px;
+          }
 
           svg {
             height: 40px;
@@ -129,9 +190,21 @@
         }
 
         a {
-          font-size: 25px;
           color: #fd4976;
           text-decoration: underline;
+
+          @include mobile {
+          }
+
+          @include tablet {
+            font-size: 25px;
+          }
+        }
+      }
+
+      .link-mail {
+        @include desktop {
+          padding-left: 20px;
         }
       }
     }

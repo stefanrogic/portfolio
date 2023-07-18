@@ -24,9 +24,16 @@ footer {
   ul {
     margin: 0 0 0 80px;
 
-    display: flex;
     align-items: center;
     gap: 40px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: flex;
+    }
 
     li {
       font-size: 25px;

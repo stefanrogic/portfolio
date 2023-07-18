@@ -12,7 +12,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true });
 
   const variants = {
-    hidden: { opacity: 0, x: -800 },
+    hidden: { opacity: 0, x: "-50vw" },
     visible: { opacity: 1, x: 0 },
   };
 

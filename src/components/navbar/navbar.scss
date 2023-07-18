@@ -27,6 +27,14 @@ nav {
     align-items: center;
     gap: 50px;
 
+    @include mobile {
+      display: none;
+    }
+
+    @include desktop {
+      display: flex;
+    }
+
     li {
       font-size: 25px;
       font-weight: 500;
@@ -35,7 +43,41 @@ nav {
     }
   }
 
-  button {
+  .resume-btn {
     @extend .default-button;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .menu-btn {
+    margin-left: auto;
+    flex-direction: column;
+    gap: 15px;
+
+    border: none;
+    background: transparent;
+
+    @include mobile {
+      display: flex;
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    .first-line,
+    .second-line {
+      height: 7px;
+      width: 50px;
+
+      border-radius: 10px;
+      background-color: white;
+    }
   }
 }

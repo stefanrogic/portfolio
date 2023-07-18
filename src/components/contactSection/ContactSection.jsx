@@ -15,7 +15,7 @@ const ContactSection = () => {
   const isInViewMain = useInView(refMain, { once: true });
 
   const variants = {
-    hidden: { opacity: 0, x: -800 },
+    hidden: { opacity: 0, x: "-50vw" },
     visible: { opacity: 1, x: 0 },
   };
 
@@ -30,7 +30,7 @@ const ContactSection = () => {
         <motion.div className="main" ref={refMain} animate={isInViewMain ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5, delay: 0.5 }}>
           <form action="https://formsubmit.co/Stefanrogic95@gmail.com" method="POST" className="inputs">
             <span>Name</span>
-            <input name="name" type="text" placeholder="Enter you name..." />
+            <input name="name" type="text" placeholder="Enter your name..." />
             <span>Email</span>
             <input name="email" type="email" placeholder="Enter your email..." />
             <span>Message</span>
@@ -45,7 +45,7 @@ const ContactSection = () => {
           </form>
 
           <div className="links">
-            <div className="link" style={{ paddingLeft: "20px" }}>
+            <div className="link link-mail">
               <span>
                 <EmailIcon style={{ color: "white", height: "50px", width: "50px" }} /> Email
               </span>

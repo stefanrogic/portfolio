@@ -9,29 +9,48 @@
   flex-direction: row;
 
   @include mobile {
+    height: 80vh;
+    margin-top: 30px;
+  }
+
+  @include tablet {
+    height: 85vh;
+    margin-top: 30px;
+  }
+
+  @include desktop {
     height: 70vh;
+    margin-top: 80px;
   }
 
   @include rwd("1920px") {
     height: 700px;
   }
 
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   .left {
     position: absolute;
-    z-index: 100;
-    left: 30px;
-    top: 110px;
+    z-index: 95;
 
     display: flex;
     flex-direction: column;
 
+    @include mobile {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include rwd("1000px") {
+      left: 0;
+      top: 110px;
+      transform: none;
+    }
+
     .greet {
       display: flex;
       flex-direction: column;
-
-      padding: 40px 60px;
 
       border-radius: 20px;
       background-color: map-get($palette, bg);
@@ -39,6 +58,17 @@
       border: 10px solid #fd4976;
 
       animation: animateBorder 0.1s linear infinite;
+
+      @include mobile {
+        padding: 20px 40px;
+      }
+
+      @include tablet {
+      }
+
+      @include desktop {
+        padding: 40px 60px;
+      }
 
       @keyframes animateBorder {
         0% {
@@ -54,15 +84,27 @@
 
       .greet-hello {
         margin: 0;
-
-        font-size: 90px;
-        line-height: 90px;
         font-weight: 700;
 
-        width: 700px;
         cursor: default;
 
         animation: animateH1 0.1s linear infinite;
+
+        @include mobile {
+          font-size: 10vw;
+          width: 55vw;
+        }
+
+        @include tablet {
+          font-size: 7vw;
+          width: 60vw;
+        }
+
+        @include desktop {
+          font-size: 90px;
+          line-height: 90px;
+          width: 700px;
+        }
 
         @keyframes animateH1 {
           0% {
@@ -80,14 +122,19 @@
       .greet-role {
         margin: 20px 0 0 0;
 
-        font-size: 35px;
-        line-height: 35px;
-
         color: #fd4976;
 
         cursor: default;
 
         animation: animateP 5s linear infinite;
+
+        @include mobile {
+          font-size: 4vw;
+        }
+
+        @include tablet {
+          font-size: 35px;
+        }
 
         @keyframes animateP {
           0%,
@@ -126,6 +173,14 @@
       align-items: center;
       gap: 20px;
 
+      @include mobile {
+        justify-content: center;
+      }
+
+      @include desktop {
+        justify-content: flex-start;
+      }
+
       a {
         svg {
           height: 40px;
@@ -134,21 +189,27 @@
       }
 
       button {
-        margin-right: 80px;
         @extend .default-button;
       }
     }
   }
 
   .right {
-    width: 70%;
     height: inherit;
-    margin-left: auto;
+
     overflow: hidden;
-    margin-right: 30px;
 
     border-radius: 20px;
     background-color: rgb(61, 61, 61);
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include rwd("1400px") {
+      width: 70%;
+      margin-left: auto;
+    }
 
     img {
       height: inherit;
