@@ -5,6 +5,14 @@ footer {
   display: flex;
   background-color: #0e1013;
 
+  @include mobile {
+    overflow-x: hidden;
+  }
+
+  @include desktop {
+    overflow-x: auto;
+  }
+
   p {
     @include mobile {
       font-size: 15px;

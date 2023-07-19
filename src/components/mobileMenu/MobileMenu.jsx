@@ -3,6 +3,7 @@ import "./mobileMenu.scss";
 import { motion } from "framer-motion";
 
 import CloseIcon from "@mui/icons-material/Close";
+import { duration } from "@mui/material";
 
 const MobileMenu = ({ toggle, onScroll, onClick }) => {
   const variants = {
