@@ -166,20 +166,20 @@
 
   .left {
     .project-info {
-      @include desktop {
+      @include mobile {
         align-items: flex-end;
       }
 
       .project-name,
       .project-alt {
-        @include desktop {
+        @include mobile {
           text-align: right;
         }
       }
     }
 
     .buttons {
-      @include desktop {
+      @include mobile {
         margin-left: auto;
       }
     }
