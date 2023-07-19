@@ -42,6 +42,9 @@
       line-height: 90px;
       font-weight: 700;
 
+      color: #8efbff;
+      text-shadow: 0 0 30px #00f5ff;
+
       @include mobile {
         font-size: 45px;
         padding-left: 20px;
@@ -54,30 +57,32 @@
       @include desktop {
         font-size: 90px;
         padding-left: 50px;
+
+        animation: animateContact 0.1s linear infinite;
+
+        @keyframes animateContact {
+          0% {
+            color: #8efbff;
+            text-shadow: 0 0 30px #00f5ff;
+          }
+
+          100% {
+            color: #3bf2f8;
+            text-shadow: 0 0 30px #3bf2f8;
+          }
+        }
       }
 
       cursor: default;
-
-      animation: animateContact 0.1s linear infinite;
-
-      @keyframes animateContact {
-        0% {
-          color: #8efbff;
-          text-shadow: 0 0 30px #00f5ff;
-        }
-
-        100% {
-          color: #3bf2f8;
-          text-shadow: 0 0 30px #3bf2f8;
-        }
-      }
     }
 
     .line {
       flex: 1;
 
       border-radius: 10px;
-      animation: animateLine 0.1s linear infinite;
+
+      background-color: #8efbff;
+      box-shadow: 0 0 30px #00f5ff;
 
       @include mobile {
         height: 5px;
@@ -85,6 +90,10 @@
 
       @include tablet {
         height: 10px;
+      }
+
+      @include desktop {
+        animation: animateLine 0.1s linear infinite;
       }
     }
   }

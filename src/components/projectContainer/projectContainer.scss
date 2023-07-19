@@ -192,7 +192,9 @@
   align-self: center;
 
   border-radius: 10px;
-  animation: animateSeparator 0.1s linear infinite;
+
+  background-color: #8efbff;
+  box-shadow: 0 0 30px #00f5ff;
 
   @include mobile {
     margin-bottom: 50px;
@@ -206,17 +208,18 @@
 
   @include desktop {
     margin-bottom: 150px;
-  }
+    animation: animateSeparator 0.1s linear infinite;
 
-  @keyframes animateSeparator {
-    0% {
-      background-color: #8efbff;
-      box-shadow: 0 0 30px #00f5ff;
-    }
+    @keyframes animateSeparator {
+      0% {
+        background-color: #8efbff;
+        box-shadow: 0 0 30px #00f5ff;
+      }
 
-    100% {
-      background-color: #3bf2f8;
-      box-shadow: 0 0 30px #3bf2f8;
+      100% {
+        background-color: #3bf2f8;
+        box-shadow: 0 0 30px #3bf2f8;
+      }
     }
   }
 }

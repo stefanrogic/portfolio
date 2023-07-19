@@ -40,6 +40,9 @@
       line-height: 90px;
       font-weight: 700;
 
+      color: #8efbff;
+      text-shadow: 0 0 30px #00f5ff;
+
       @include mobile {
         font-size: 45px;
         padding-right: 20px;
@@ -52,11 +55,23 @@
       @include desktop {
         font-size: 90px;
         padding-right: 50px;
+
+        animation: animate 0.1s linear infinite;
+
+        @keyframes animate {
+          0% {
+            color: #8efbff;
+            text-shadow: 0 0 30px #00f5ff;
+          }
+
+          100% {
+            color: #3bf2f8;
+            text-shadow: 0 0 30px #3bf2f8;
+          }
+        }
       }
 
       cursor: default;
-
-      animation: animate 0.1s linear infinite;
 
       span {
         color: #fd4976;
@@ -94,37 +109,15 @@
           }
         }
       }
-
-      @keyframes animate {
-        0% {
-          color: #8efbff;
-          text-shadow: 0 0 30px #00f5ff;
-        }
-
-        100% {
-          color: #3bf2f8;
-          text-shadow: 0 0 30px #3bf2f8;
-        }
-      }
     }
 
     .line {
       flex: 1;
 
       border-radius: 10px;
-      animation: animateLine 0.1s linear infinite;
 
-      @keyframes animateLine {
-        0% {
-          background-color: #8efbff;
-          box-shadow: 0 0 30px #00f5ff;
-        }
-
-        100% {
-          background-color: #3bf2f8;
-          box-shadow: 0 0 30px #3bf2f8;
-        }
-      }
+      background-color: #3bf2f8;
+      box-shadow: 0 0 30px #3bf2f8;
 
       @include mobile {
         height: 5px;
@@ -132,6 +125,22 @@
 
       @include tablet {
         height: 10px;
+      }
+
+      @include desktop {
+        animation: animateLine 0.1s linear infinite;
+
+        @keyframes animateLine {
+          0% {
+            background-color: #8efbff;
+            box-shadow: 0 0 30px #00f5ff;
+          }
+
+          100% {
+            background-color: #3bf2f8;
+            box-shadow: 0 0 30px #3bf2f8;
+          }
+        }
       }
     }
   }

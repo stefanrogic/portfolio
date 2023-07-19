@@ -49,8 +49,6 @@
 
       border: 10px solid #fd4976;
 
-      animation: animateBorder 0.1s linear infinite;
-
       @include mobile {
         padding: 20px 40px;
       }
@@ -60,17 +58,19 @@
 
       @include desktop {
         padding: 40px 60px;
-      }
 
-      @keyframes animateBorder {
-        0% {
-          border-color: #fd4976;
-          box-shadow: 0 0 30px #fd4976;
-        }
+        animation: animateBorder 0.1s linear infinite;
 
-        100% {
-          border-color: #ff6188;
-          box-shadow: 0 0 30px #ff6188;
+        @keyframes animateBorder {
+          0% {
+            border-color: #fd4976;
+            box-shadow: 0 0 30px #fd4976;
+          }
+
+          100% {
+            border-color: #ff6188;
+            box-shadow: 0 0 30px #ff6188;
+          }
         }
       }
 
