@@ -27,7 +27,7 @@ function App() {
       <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{ duration: 0.5, delay: 2.5 }}>
         <ProjectsSection />
         <ContactSection />
-        <Footer onScroll={handleScroll} />
+        <Footer />
       </motion.div>
     </div>
   );

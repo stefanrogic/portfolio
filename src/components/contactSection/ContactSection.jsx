@@ -8,71 +8,77 @@ import { useRef } from "react";
 import EmailIcon from "@mui/icons-material/Email";
 
 const ContactSection = () => {
-  const refH1 = useRef(null);
-  const isInViewH1 = useInView(refH1, { once: true });
-
-  const refMain = useRef(null);
-  const isInViewMain = useInView(refMain, { once: true });
-
-  const variants = {
-    hidden: { opacity: 0, x: "-50vw" },
-    visible: { opacity: 1, x: 0 },
-  };
-
   return (
     <div className="default-margin">
       <div className="contact-section">
-        <motion.div className="contact-heading" ref={refH1} animate={isInViewH1 ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5, delay: 0.5 }}>
+        <motion.div className="contact-heading" viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
           <motion.h1 className="contact-header">CONTACT</motion.h1>
           <div className="line"></div>
         </motion.div>
 
-        <motion.div className="main" ref={refMain} animate={isInViewMain ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5, delay: 0.5 }}>
+        <div className="main">
           <form action="https://formsubmit.co/Stefanrogic95@gmail.com" method="POST" className="inputs">
-            <span>Name</span>
-            <input name="name" type="text" placeholder="Enter your name..." />
-            <span>Email</span>
-            <input name="email" type="email" placeholder="Enter your email..." />
-            <span>Message</span>
-            <textarea name="message" id="" rows="5" placeholder="Enter your message..."></textarea>
+            <motion.span viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
+              Name
+            </motion.span>
+            <motion.input name="name" type="text" placeholder="Enter your name..." viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }} />
+            <motion.span viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
+              Email
+            </motion.span>
+            <motion.input name="email" type="email" placeholder="Enter your email..." viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }} />
+            <motion.span viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
+              Message
+            </motion.span>
+            <motion.textarea
+              name="message"
+              id=""
+              rows="5"
+              placeholder="Enter your message..."
+              viewport={{ once: true }}
+              initial={{ opacity: 0, x: "-100%" }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            ></motion.textarea>
 
             {/* <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="#" /> */}
 
-            <motion.button type="submit" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
-              SEND
-            </motion.button>
+            <motion.div viewport={{ once: true }} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
+              <motion.button type="submit" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
+                SEND
+              </motion.button>
+            </motion.div>
           </form>
 
           <div className="links">
             <div className="link link-mail">
-              <span>
+              <motion.span viewport={{ once: true }} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 <EmailIcon style={{ color: "white", height: "50px", width: "50px" }} /> Email
-              </span>
-              <a href="mailto:stefanrogic@protonmail.com" target="_blank">
+              </motion.span>
+              <motion.a href="mailto:stefanrogic@protonmail.com" target="_blank" viewport={{ once: true }} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 stefanrogic@protonmail.com
-              </a>
+              </motion.a>
             </div>
 
             <div className="link">
-              <span>
+              <motion.span viewport={{ once: true }} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 <LinkedIn fill="white" /> LinkedIn
-              </span>
-              <a href="https://www.linkedin.com/in/stefanrogic" target="_blank">
+              </motion.span>
+              <motion.a href="https://www.linkedin.com/in/stefanrogic" target="_blank" viewport={{ once: true }} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 linkedin.com/in/stefanrogic
-              </a>
+              </motion.a>
             </div>
 
             <div className="link">
-              <span>
+              <motion.span viewport={{ once: true }} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 <GitHub fill="white" /> GitHub
-              </span>
-              <a href="https://github.com/Rasgrin" target="_blank">
+              </motion.span>
+              <motion.a href="https://github.com/Rasgrin" target="_blank" viewport={{ once: true }} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 linkedin.com/in/stefanrogic
-              </a>
+              </motion.a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
