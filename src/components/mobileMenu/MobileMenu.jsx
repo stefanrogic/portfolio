@@ -1,23 +1,39 @@
 import "./mobileMenu.scss";
 
-const MobileMenu = ({ onScroll, onClick }) => {
+import { motion } from "framer-motion";
+
+import CloseIcon from "@mui/icons-material/Close";
+
+const MobileMenu = ({ toggle, onScroll, onClick }) => {
+  const variants = {
+    hidden: { opacity: 1, x: 0 },
+    visible: { opacity: 0, x: "100%" },
+  };
+
   return (
-    <div className="mobile-menu" onClick={() => onClick(false)}>
-      <div className="default-margin">
-        <ul className="menu-ul">
-          {["PROJECTS", "CONTACT"].map((a, i) => (
-            <li key={i} onClick={() => (a === "PROJECTS" ? onScroll(".projects-section") : onScroll(".contact-section"))}>
-              {a}
-            </li>
-          ))}
-          <li>
-            <a href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
-              RESUME
-            </a>
+    <motion.div className="mobile-menu" variants={variants} animate={toggle ? "hidden" : "visible"} transition={{ duration: 0.5 }}>
+      <button className="close-btn" onClick={() => onClick(false)}>
+        <CloseIcon style={{ height: "40px", width: "40px" }} />
+      </button>
+      <ul className="menu-ul">
+        {["PROJECTS", "CONTACT"].map((a, i) => (
+          <li
+            key={i}
+            onClick={() => {
+              a === "PROJECTS" ? onScroll(".projects-section") : onScroll(".contact-section");
+              onClick(false);
+            }}
+          >
+            {a}
           </li>
-        </ul>
-      </div>
-    </div>
+        ))}
+        <li>
+          <a href="https://drive.google.com/file/d/1DkL5xPQDqxMa88yyFKdXZk2BGqMzDrR_/view?usp=drive_link" target="_blank">
+            RESUME
+          </a>
+        </li>
+      </ul>
+    </motion.div>
   );
 };
 

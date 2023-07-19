@@ -1,6 +1,7 @@
 import "./App.scss";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import ContactSection from "./components/contactSection/ContactSection";
 import Footer from "./components/footer/Footer";
@@ -8,7 +9,6 @@ import HeroSection from "./components/heroSection/HeroSection";
 import Navbar from "./components/navbar/Navbar";
 import ProjectsSection from "./components/projectsSection/ProjectsSection";
 import MobileMenu from "./components/mobileMenu/MobileMenu";
-import { useState } from "react";
 
 function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App" style={{ overflowY: showMobileMenu && "hidden" }}>
-      {showMobileMenu && <MobileMenu onScroll={handleScroll} onClick={setShowMobileMenu} />}
+      <MobileMenu toggle={showMobileMenu} onScroll={handleScroll} onClick={setShowMobileMenu} />
       <Navbar onScroll={handleScroll} onClick={setShowMobileMenu} />
       <HeroSection onScroll={handleScroll} />
       <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{ duration: 0.5, delay: 2.5 }}>

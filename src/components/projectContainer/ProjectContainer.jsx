@@ -5,6 +5,9 @@ import { useRef } from "react";
 
 import heroImg from "../../assets/heroImg.png";
 
+import CodeIcon from "@mui/icons-material/Code";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+
 const ProjectContainer = ({ data }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

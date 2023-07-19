@@ -2,25 +2,50 @@
 
 .mobile-menu {
   position: fixed;
-  width: 100%;
   z-index: 99;
 
+  right: 0;
+
   height: 100vh;
-  width: 100%;
-
+  padding-top: 15px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
 
-  background-color: rgba($color: #000000, $alpha: 0.8);
+  background-color: #0e1013;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 330px;
+  }
+}
+
+.close-btn {
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  color: white;
 }
 
 .menu-ul {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 110px;
 
-  text-align: center;
+  @include mobile {
+    text-align: center;
+  }
+
+  @include tablet {
+    text-align: right;
+    margin-right: 30px;
+  }
 
   li {
     font-weight: 500;
@@ -28,15 +53,11 @@
     cursor: pointer;
 
     @include mobile {
-      font-size: 17.5vw;
+      font-size: 40px;
     }
 
     @include tablet {
-      font-size: 19vw;
-    }
-
-    @include desktop {
-      font-size: 10vw;
+      font-size: 55px;
     }
 
     a {

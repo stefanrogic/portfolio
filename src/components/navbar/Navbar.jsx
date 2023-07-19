@@ -7,7 +7,7 @@ const Navbar = ({ onScroll, onClick }) => {
   return (
     <motion.nav initial={{ opacity: 0, y: -800 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 1.5 }}>
       <div className="default-margin" style={{ display: "flex", alignItems: "center", width: "100%" }}>
-        <a className="nav-logo" href="https://stefan-rogic.netlify.app/">
+        <a className="nav-logo" href="https://stefanrogic.netlify.app/">
           <Logo fill="white" />
         </a>
         <ul>
@@ -23,7 +23,13 @@ const Navbar = ({ onScroll, onClick }) => {
             RESUME
           </motion.button>
         </a>
-        <motion.button className="menu-btn" onClick={() => onClick(true)}>
+        <motion.button
+          className="menu-btn"
+          onClick={() => {
+            onClick(true);
+            console.log(true);
+          }}
+        >
           <div className="first-line"></div>
           <div className="first-line"></div>
         </motion.button>

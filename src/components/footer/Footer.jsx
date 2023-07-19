@@ -11,7 +11,19 @@ const Footer = ({ onScroll }) => {
     <footer>
       <div className="default-margin" style={{ display: "flex", width: "100%", alignItems: "center", gap: "30px" }}>
         <p>
-          Built using <a href="https://react.dev/">React</a>, <a href="https://sass-lang.com/">Sass</a> and <a href="https://www.framer.com/motion/">Framer Motion</a>.
+          Built using{" "}
+          <a href="https://react.dev/" target="_blank">
+            React
+          </a>
+          ,{" "}
+          <a href="https://sass-lang.com/" target="_blank">
+            Sass
+          </a>{" "}
+          and{" "}
+          <a href="https://www.framer.com/motion/" target="_blank">
+            Framer Motion
+          </a>
+          .
         </p>
 
         <div className="socials">
