@@ -11,7 +11,7 @@ const MobileMenu = ({ toggle, onScroll, onClick }) => {
   };
 
   return (
-    <motion.div className="mobile-menu" variants={variants} animate={toggle ? "hidden" : "visible"} transition={{ duration: 0.5 }}>
+    <motion.div className="mobile-menu" variants={variants} initial={{ opacity: 0, x: "100%" }} animate={toggle ? "hidden" : "visible"} transition={{ duration: 0.5 }}>
       <button className="close-btn" onClick={() => onClick(false)}>
         <CloseIcon style={{ height: "40px", width: "40px" }} />
       </button>
