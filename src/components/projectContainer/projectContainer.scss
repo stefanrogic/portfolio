@@ -40,6 +40,19 @@
       border-radius: 20px;
       background-color: map-get($palette, bg);
 
+      .project-technologies {
+        margin-bottom: 30px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        span {
+          font-size: 15px;
+
+          color: #3bf2f8;
+        }
+      }
+
       .project-name {
         margin: 0;
 

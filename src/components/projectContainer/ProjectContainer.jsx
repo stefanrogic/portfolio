@@ -21,6 +21,11 @@ const ProjectContainer = ({ data }) => {
       >
         <div className="left">
           <div className="project-info">
+            <div className="project-technologies">
+              {data.tags.map((tag, i) => (
+                <span key={i}>{tag}</span>
+              ))}
+            </div>
             <motion.h1 className="project-name">{data.name}</motion.h1>
             <motion.p className="project-alt">{data.alt}</motion.p>
           </div>
