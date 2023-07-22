@@ -140,6 +140,19 @@ const Modal = ({ showModal, toggle, project }) => {
                   <motion.h1 className="project-name">{project.name}</motion.h1>
                   <motion.p className="project-alt">{project.alt}</motion.p>
 
+                  <div className="buttons">
+                    <a href={project.demo} target="_blank">
+                      <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                        LIVE DEMO
+                      </motion.button>
+                    </a>
+                    <a href={project.code} target="_blank">
+                      <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                        CODE
+                      </motion.button>
+                    </a>
+                  </div>
+
                   {project.background.length <= 1 && (
                     <p className="project-desc" style={{ marginRight: "30px" }}>
                       {project.shortDesc}

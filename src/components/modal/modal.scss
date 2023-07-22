@@ -199,6 +199,7 @@
       flex-direction: row;
 
       overflow-y: auto;
+      overflow-x: auto;
 
       @include desktop {
         width: 50%;
@@ -207,16 +208,6 @@
       .project-info {
         display: flex;
         flex-direction: column;
-
-        visibility: visible;
-
-        &:hover {
-          visibility: visible;
-        }
-
-        &:focus {
-          visibility: visible;
-        }
 
         border-radius: 20px;
         background-color: map-get($palette, bg);
@@ -254,7 +245,6 @@
 
         .project-alt {
           line-height: 35px;
-
           color: #ff2e63;
 
           @include mobile {
@@ -265,6 +255,47 @@
           @include tablet {
             margin: 10px 0 0 0;
             font-size: 30px;
+          }
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: row;
+
+          @include mobile {
+            margin-top: 20px;
+            gap: 15px;
+          }
+
+          @include tablet {
+            margin-top: 20px;
+            gap: 15px;
+          }
+
+          @include desktop {
+          }
+
+          button {
+            @extend .default-button;
+            color: map-get($palette, fg);
+            background-color: transparent;
+            border: 1px solid map-get($palette, fg);
+
+            &:hover {
+              color: map-get($palette, textDark);
+              background-color: map-get($palette, fg);
+              border: none;
+            }
+
+            @include mobile {
+              width: 120px;
+            }
+
+            @include tablet {
+              width: 100px;
+              height: 40px;
+              font-size: 12px;
+            }
           }
         }
 
