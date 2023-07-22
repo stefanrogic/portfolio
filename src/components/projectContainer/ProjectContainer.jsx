@@ -8,7 +8,7 @@ import heroImg from "../../assets/heroImg.png";
 import CodeIcon from "@mui/icons-material/Code";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
-const ProjectContainer = ({ data, onClick, setProject, scrollLock }) => {
+const ProjectContainer = ({ data, onClick, setProject }) => {
   return (
     <>
       {/* TODO: ADD DETAILED DESCRIPTION AND IMAGES FOR ALL PROJECTS (POPUP WINDOW) */}
@@ -66,7 +66,6 @@ const ProjectContainer = ({ data, onClick, setProject, scrollLock }) => {
           onClick={() => {
             setProject(data);
             onClick(true);
-            scrollLock("hidden");
           }}
         >
           <motion.img src={data.logo ? data.logo.img : heroImg} alt={data.logo ? data.logo.name : "hero-img"} whileHover={{ scale: 1.1 }} />

@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import CloseFullscreenIcon from "@mui/icons-material/CloseFullscreen";
 
-const Modal = ({ showModal, toggle, project, scrollLock }) => {
+const Modal = ({ showModal, toggle, project }) => {
   const swipeConfidenceThreshold = 10000;
   const swipePower = (offset, velocity) => {
     return Math.abs(offset) * velocity;
@@ -32,7 +32,6 @@ const Modal = ({ showModal, toggle, project, scrollLock }) => {
             key="modal-bg"
             className="modal-bg"
             onClick={() => {
-              scrollLock("auto");
               toggle(false);
             }}
             initial={{ opacity: 0 }}
@@ -45,7 +44,6 @@ const Modal = ({ showModal, toggle, project, scrollLock }) => {
             <div className="top">
               <button
                 onClick={() => {
-                  scrollLock("auto");
                   toggle(false);
                 }}
               >

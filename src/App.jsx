@@ -21,18 +21,14 @@ function App() {
     el && el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleScrollLock = (val) => {
-    document.body.style.overflow = val;
-  };
-
   return (
     <div className="App">
       <MobileMenu toggle={showMobileMenu} onScroll={handleScroll} onClick={setShowMobileMenu} />
       <Navbar onScroll={handleScroll} onClick={setShowMobileMenu} />
-      <Modal showModal={showModal} toggle={setShowModal} project={selectedProject} scrollLock={handleScrollLock} />
+      <Modal showModal={showModal} toggle={setShowModal} project={selectedProject} />
       <HeroSection onScroll={handleScroll} />
       <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{ duration: 0.5, delay: 2.5 }}>
-        <ProjectsSection onClick={setShowModal} setProject={setSelectedProject} scrollLock={handleScrollLock} />
+        <ProjectsSection onClick={setShowModal} setProject={setSelectedProject} />
         <ContactSection />
         <Footer />
       </motion.div>
