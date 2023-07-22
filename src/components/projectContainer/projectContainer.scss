@@ -20,7 +20,7 @@
   @include desktop {
     height: 500px;
     flex-direction: row;
-    gap: 50px;
+    gap: 150px;
     margin-bottom: 150px;
   }
 
@@ -35,13 +35,12 @@
     .project-info {
       display: flex;
       flex-direction: column;
-      margin-top: auto;
 
       border-radius: 20px;
       background-color: map-get($palette, bg);
 
       .project-technologies {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
@@ -86,15 +85,19 @@
         }
 
         @include tablet {
-          margin: 20px 0 0 0;
-          font-size: 35px;
+          margin: 10px 0 0 0;
+          font-size: 30px;
         }
+      }
+
+      .project-desc {
+        font-size: 23px;
+        font-weight: 300;
       }
     }
 
     .buttons {
       display: flex;
-
       flex-direction: row;
 
       @include mobile {
@@ -105,6 +108,10 @@
       @include tablet {
         margin-top: 50px;
         gap: 30px;
+      }
+
+      @include desktop {
+        margin-top: auto;
       }
 
       button {
@@ -184,7 +191,8 @@
       }
 
       .project-name,
-      .project-alt {
+      .project-alt,
+      .project-desc {
         @include mobile {
           text-align: right;
         }

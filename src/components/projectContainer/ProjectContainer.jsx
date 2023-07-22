@@ -8,7 +8,7 @@ import heroImg from "../../assets/heroImg.png";
 import CodeIcon from "@mui/icons-material/Code";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
-const ProjectContainer = ({ data }) => {
+const ProjectContainer = ({ data, onClick, setProject, scrollLock }) => {
   return (
     <>
       {/* TODO: ADD DETAILED DESCRIPTION AND IMAGES FOR ALL PROJECTS (POPUP WINDOW) */}
@@ -26,8 +26,26 @@ const ProjectContainer = ({ data }) => {
                 <span key={i}>{tag}</span>
               ))}
             </div>
-            <motion.h1 className="project-name">{data.name}</motion.h1>
-            <motion.p className="project-alt">{data.alt}</motion.p>
+            <motion.h1
+              className="project-name"
+              onClick={() => {
+                setProject(data);
+                onClick(true);
+              }}
+            >
+              {data.name}
+            </motion.h1>
+            <motion.p
+              className="project-alt"
+              onClick={() => {
+                setProject(data);
+                onClick(true);
+              }}
+            >
+              {data.alt}
+            </motion.p>
+
+            <p className="project-desc">{data.shortDesc}</p>
           </div>
           <div className="buttons">
             <a href={data.demo} target="_blank">
@@ -43,7 +61,14 @@ const ProjectContainer = ({ data }) => {
           </div>
         </div>
 
-        <div className="right">
+        <div
+          className="right"
+          onClick={() => {
+            setProject(data);
+            onClick(true);
+            scrollLock("hidden");
+          }}
+        >
           <motion.img src={data.logo ? data.logo.img : heroImg} alt={data.logo ? data.logo.name : "hero-img"} whileHover={{ scale: 1.1 }} />
         </div>
       </motion.div>

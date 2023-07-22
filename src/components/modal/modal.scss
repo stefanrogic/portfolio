@@ -1,0 +1,279 @@
+@import "../../index.scss";
+
+.modal-bg {
+  position: fixed;
+
+  height: 100vh;
+  width: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
+  z-index: 100;
+}
+
+.modal {
+  position: fixed;
+  border-radius: 10px;
+  background-color: #14171b;
+  z-index: 101;
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ff2e63;
+    border-radius: 10px;
+  }
+
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    width: 95%;
+  }
+
+  @include desktop {
+    width: 90%;
+  }
+
+  @include rwd("1600px") {
+    width: 80%;
+  }
+
+  @include rwd("1920px") {
+    width: 60%;
+  }
+
+  .top {
+    background-color: #0e1013;
+    border-radius: 10px 10px 0 0;
+
+    button {
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      background-color: transparent;
+      border: none;
+      color: white;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    padding: 50px;
+
+    @include mobile {
+      height: 68vh;
+    }
+
+    @include rwd("1920px") {
+      height: 700px;
+    }
+
+    .left {
+      position: relative;
+      height: inherit;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      background-color: #14171b;
+
+      &:hover {
+        overflow-y: auto;
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: top;
+
+        cursor: pointer;
+      }
+
+      .reset-zoom {
+        position: fixed;
+        z-index: 150;
+
+        top: 90%;
+        right: 3.2%;
+        transform: translate(-50%, -50%);
+
+        height: 50px;
+        width: 60px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+
+        background-color: #14171b;
+        color: #ff2e63;
+        border: none;
+        border-radius: 10px;
+      }
+
+      .list {
+        position: fixed;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        top: 90%;
+        // left: 26%;
+        transform: translate(-50%, -50%);
+
+        padding: 0 10px;
+
+        width: 300px;
+        height: 50px;
+
+        z-index: 150;
+
+        border-radius: 10px;
+        background-color: #0e1013;
+
+        button {
+          background-color: transparent;
+          border: none;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            color: #ff2e63;
+          }
+        }
+
+        .keys {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+
+          margin: 0 auto;
+
+          .button {
+            height: 12px;
+            width: 12px;
+
+            border-radius: 10px;
+            background-color: #ff2e63;
+
+            cursor: pointer;
+
+            @include desktop {
+              animation: animateList 0.1s linear infinite;
+
+              @keyframes animateList {
+                0% {
+                  border-color: #fd4976;
+                  box-shadow: 0 0 30px #fd4976;
+                }
+
+                100% {
+                  border-color: #ff6188;
+                  box-shadow: 0 0 30px #ff6188;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: row;
+
+      overflow-y: auto;
+
+      @include desktop {
+        width: 50%;
+      }
+
+      .project-info {
+        display: flex;
+        flex-direction: column;
+
+        visibility: visible;
+
+        &:hover {
+          visibility: visible;
+        }
+
+        &:focus {
+          visibility: visible;
+        }
+
+        border-radius: 20px;
+        background-color: map-get($palette, bg);
+
+        .project-technologies {
+          margin-bottom: 20px;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+
+          span {
+            font-size: 15px;
+
+            color: #3bf2f8;
+          }
+        }
+
+        .project-name {
+          margin: 0;
+
+          line-height: 60px;
+          font-weight: 700;
+
+          // width: 500px;
+          color: #ffe8e8;
+
+          @include mobile {
+            font-size: 8vw;
+          }
+
+          @include tablet {
+            font-size: 60px;
+          }
+        }
+
+        .project-alt {
+          line-height: 35px;
+
+          color: #ff2e63;
+
+          @include mobile {
+            margin: 0;
+            font-size: 5vw;
+          }
+
+          @include tablet {
+            margin: 10px 0 0 0;
+            font-size: 30px;
+          }
+        }
+
+        .project-desc {
+          font-size: 23px;
+          font-weight: 300;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

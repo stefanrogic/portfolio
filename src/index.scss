@@ -7,6 +7,31 @@ $palette: (
   bg: #14171b,
 );
 
+@mixin mobile {
+  @media (min-width: 250px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// CUSTOM
+@mixin rwd($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+
 :root {
   font-family: "Space Grotesk", sans-serif;
 
@@ -20,6 +45,36 @@ $palette: (
   -webkit-text-size-adjust: 100%;
 
   overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #14171b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3bf2f8;
+    border-radius: 10px;
+
+    @include desktop {
+      animation: animateScroll 0.1s linear infinite;
+
+      @keyframes animateScroll {
+        0% {
+          background-color: #8efbff;
+          box-shadow: inset 0 0 30px #00f5ff;
+        }
+
+        100% {
+          background-color: #3bf2f8;
+          box-shadow: inset 0 0 30px #3bf2f8;
+        }
+      }
+    }
+  }
 }
 
 body {
@@ -44,31 +99,6 @@ textarea {
 
 button {
   cursor: pointer;
-}
-
-@mixin mobile {
-  @media (min-width: 250px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: 760px) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: 1280px) {
-    @content;
-  }
-}
-
-// CUSTOM
-@mixin rwd($screen) {
-  @media (min-width: $screen) {
-    @content;
-  }
 }
 
 .default-button {
