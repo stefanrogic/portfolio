@@ -57,9 +57,9 @@ const Modal = ({ showModal, toggle, project }) => {
                     key={selectedImg}
                     src={project.static[selectedImg]?.img}
                     alt={project.static[selectedImg]?.name}
-                    initial={{ x: listDirection === "forward" && selectedImg !== 0 ? "100%" : "-100%", opacity: 0 }}
+                    initial={{ x: listDirection === "forward" ? "100%" : "-100%", opacity: 0 }}
                     animate={{ x: 0, opacity: 1, zIndex: 1 }}
-                    exit={{ x: listDirection === "backward" && selectedImg !== 0 ? "100%" : "-100%", opacity: 0, zIndex: 0 }}
+                    exit={{ x: listDirection === "backward" ? "100%" : "-100", opacity: 0, zIndex: 0 }}
                     transition={{
                       x: { type: "spring", stiffness: 300, damping: 30 },
                       opacity: { duration: 0.2 },
@@ -71,12 +71,12 @@ const Modal = ({ showModal, toggle, project }) => {
                       const swipe = swipePower(offset.x, velocity.x);
 
                       if (swipe < -swipeConfidenceThreshold) {
-                        setListDirection("forward");
+                        setListDirection((prev) => (prev = "forward"));
                         setSelectedImg((prev) => {
                           return prev < maxImages ? prev + 1 : 0;
                         });
                       } else if (swipe > swipeConfidenceThreshold) {
-                        setListDirection("backward");
+                        setListDirection((prev) => (prev = "backward"));
                         setSelectedImg((prev) => {
                           return prev > 0 ? prev - 1 : maxImages;
                         });
