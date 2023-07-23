@@ -1,7 +1,7 @@
 import "./modal.scss";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -18,6 +18,8 @@ const Modal = ({ showModal, toggle, project }) => {
   const [selectedImg, setSelectedImg] = useState(0);
   const [zoomImg, setZoomImg] = useState(false);
   const [listDirection, setListDirection] = useState("forward");
+
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
 
   useEffect(() => {
     setSelectedImg(0);
@@ -51,7 +53,7 @@ const Modal = ({ showModal, toggle, project }) => {
               </button>
             </div>
             <div className="content" style={{ gap: zoomImg && "0" }}>
-              <motion.div className="left" initial={{ width: "50%" }} animate={{ width: zoomImg ? "100%" : "50%" }} transition={{ duration: 0.5 }}>
+              <motion.div className="left" initial={{}} animate={{ width: zoomImg && windowSize.current[0] > 1280 ? "100%" : windowSize.current[0] > 1280 ? "50%" : "100%" }} transition={{ duration: 0.5 }}>
                 <AnimatePresence initial={false}>
                   <motion.img
                     key={selectedImg}
@@ -82,7 +84,7 @@ const Modal = ({ showModal, toggle, project }) => {
                         });
                       }
                     }}
-                    onClick={() => setZoomImg(true)}
+                    onClick={() => windowSize.current[0] > 1280 && setZoomImg(true)}
                   />
                 </AnimatePresence>
 
@@ -130,7 +132,12 @@ const Modal = ({ showModal, toggle, project }) => {
                 </motion.div>
               </motion.div>
 
-              <motion.div className="right" initial={{ width: "50%", opacity: 1 }} animate={{ width: zoomImg ? "0%" : "50%", opacity: zoomImg ? 0 : 1 }} transition={{ duration: 0.5 }}>
+              <motion.div
+                className="right"
+                initial={{ opacity: 1 }}
+                animate={{ width: zoomImg && windowSize.current[0] > 1280 ? "0%" : windowSize.current[0] > 1280 ? "50%" : "100%", opacity: zoomImg && windowSize.current[0] > 1280 ? 0 : 1 }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="project-info">
                   <div className="project-technologies">
                     {project.tags.map((tag, i) => (
@@ -142,22 +149,12 @@ const Modal = ({ showModal, toggle, project }) => {
 
                   <div className="buttons">
                     <a href={project.demo} target="_blank">
-                      <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                        LIVE DEMO
-                      </motion.button>
+                      <motion.button whileTap={{ scale: 0.9 }}>LIVE DEMO</motion.button>
                     </a>
                     <a href={project.code} target="_blank">
-                      <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                        CODE
-                      </motion.button>
+                      <motion.button whileTap={{ scale: 0.9 }}>CODE</motion.button>
                     </a>
                   </div>
-
-                  {project.background.length <= 1 && (
-                    <p className="project-desc" style={{ marginRight: "30px" }}>
-                      {project.shortDesc}
-                    </p>
-                  )}
 
                   {project.background.map((bg, i) => (
                     <p className="project-desc" key={i}>

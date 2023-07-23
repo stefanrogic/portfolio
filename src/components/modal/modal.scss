@@ -33,14 +33,10 @@
   }
 
   @include desktop {
-    width: 90%;
+    width: 75%;
   }
 
-  @include rwd("1600px") {
-    width: 80%;
-  }
-
-  @include rwd("1920px") {
+  @include rwd("1921px") {
     width: 60%;
   }
 
@@ -63,31 +59,49 @@
 
   .content {
     display: flex;
-    flex-direction: row;
-    gap: 50px;
-
-    padding: 50px;
 
     @include mobile {
-      height: 68vh;
+      padding: 20px;
+      height: 75vh;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    @include rwd("1920px") {
-      height: 700px;
+    @include tablet {
+    }
+
+    @include desktop {
+      flex-direction: row;
+      padding: 50px;
+      gap: 50px;
+    }
+
+    @include rwd("1921px") {
+      height: 800px;
     }
 
     .left {
       position: relative;
       height: inherit;
-
-      border-radius: 10px;
-
       overflow: hidden;
 
       background-color: #14171b;
+      border-radius: 10px;
 
-      &:hover {
-        overflow-y: auto;
+      @include mobile {
+        width: 100%;
+        height: 1200px;
+      }
+
+      @include tablet {
+      }
+
+      @include desktop {
+        width: 50%;
+
+        &:hover {
+          overflow-y: auto;
+        }
       }
 
       img {
@@ -111,7 +125,6 @@
         height: 50px;
         width: 60px;
 
-        display: flex;
         justify-content: center;
         align-items: center;
         background-color: transparent;
@@ -120,12 +133,19 @@
         color: #ff2e63;
         border: none;
         border-radius: 10px;
+
+        @include mobile {
+          display: none;
+        }
+
+        @include desktop {
+          display: flex;
+        }
       }
 
       .list {
         position: fixed;
 
-        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -144,6 +164,14 @@
 
         border-radius: 10px;
         background-color: #0e1013;
+
+        @include mobile {
+          display: none;
+        }
+
+        @include desktop {
+          display: flex;
+        }
 
         button {
           background-color: transparent;
@@ -199,7 +227,13 @@
       flex-direction: row;
 
       overflow-y: auto;
-      overflow-x: auto;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include tablet {
+      }
 
       @include desktop {
         width: 50%;
@@ -213,7 +247,6 @@
         background-color: map-get($palette, bg);
 
         .project-technologies {
-          margin-bottom: 20px;
           display: flex;
           gap: 10px;
           flex-wrap: wrap;
@@ -223,6 +256,10 @@
 
             color: #3bf2f8;
           }
+
+          @include desktop {
+            margin-bottom: 20px;
+          }
         }
 
         .project-name {
@@ -231,7 +268,6 @@
           line-height: 60px;
           font-weight: 700;
 
-          // width: 500px;
           color: #ffe8e8;
 
           @include mobile {
@@ -273,6 +309,8 @@
           }
 
           @include desktop {
+            height: 30px;
+            margin-bottom: 30px;
           }
 
           button {

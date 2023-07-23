@@ -28,7 +28,12 @@ export const projects = [
     alt: "Supplement Web Store",
     shortDesc:
       "The web store is dedicated to dietary supplements and features an intuitive user interface with product filtering options, allowing customers to find their desired supplements effortlessly. Developed using React, Redux, and Framer Motion. Additionally, It features a fully functional shopping cart with quantity management and a quick add to cart button.",
-    background: [""],
+    background: [
+      "The web store is built using React, which allows for the creation of reusable components, ensuring a consistent design and user experience across the site. A responsive and user-friendly layout is designed to cater to customers on various devices, such as desktops, tablets, and smartphones. Clear and intuitive navigation menus are included, making it easy for users to explore different sections of the store.",
+      "The store offers a vast selection of dietary supplements, neatly organized into categories for easy browsing. Customers can use advanced filtering options to refine their search, including product type (e.g., vitamins, minerals, protein). Sorting options are available to arrange products by price, volume, and other relevant criteria.",
+      'A convenient "Quick Add to Cart" button is available on the product listing and product pages, allowing customers to instantly add items to their shopping cart without navigating away from the current page.',
+      "The web store features a fully functional shopping cart, where customers can review the items they've added and make changes to quantities or remove products. Customers can easily adjust the quantity of items they wish to purchase before proceeding to checkout.",
+    ],
     img: teraMain,
     demo: "https://tera-supplements.netlify.app/",
     code: "https://github.com/Rasgrin/tera-supplements",
