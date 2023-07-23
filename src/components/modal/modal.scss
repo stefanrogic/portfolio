@@ -74,6 +74,7 @@
       flex-direction: row;
       padding: 50px;
       gap: 50px;
+      height: 65vh;
     }
 
     @include rwd("1921px") {
@@ -90,7 +91,6 @@
 
       @include mobile {
         width: 100%;
-        height: 1200px;
       }
 
       @include tablet {
