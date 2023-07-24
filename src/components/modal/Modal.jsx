@@ -85,6 +85,7 @@ const Modal = ({ showModal, toggle, project }) => {
                       }
                     }}
                     onClick={() => windowSize.current[0] > 1280 && setZoomImg(true)}
+                    style={{ cursor: "none" }}
                   />
                 </AnimatePresence>
 

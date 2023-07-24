@@ -150,8 +150,6 @@
 
     overflow: hidden;
 
-    cursor: pointer;
-
     @include mobile {
       width: 100%;
       aspect-ratio: 1 /1;

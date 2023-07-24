@@ -14,7 +14,7 @@
     overflow-x: inherit;
   }
 
-  @include rwd("1920px") {
+  @include rwd("1921px") {
     padding-top: 170px;
   }
 
@@ -71,12 +71,12 @@
         }
       }
 
-      cursor: default;
+      cursor: none;
 
       span {
         color: #3bf2f8;
 
-        cursor: default;
+        cursor: none;
 
         animation: animateSpan 5s linear infinite;
 

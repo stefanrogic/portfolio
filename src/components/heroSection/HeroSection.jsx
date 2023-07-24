@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import heroImg from "../../assets/heroImg.png";
 
-const HeroSection = ({ onScroll }) => {
+const HeroSection = ({ onScroll, handleCursorSize }) => {
   return (
     <div className="default-margin">
       <div className="heroSection">
@@ -20,8 +20,8 @@ const HeroSection = ({ onScroll }) => {
           </motion.div>
         </div>
 
-        <motion.div className="right" initial={{ x: "100vw" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
-          <motion.img src={heroImg} alt="hero-img" />
+        <motion.div className="right" initial={{ x: "100vw" }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: 0.5 }} onMouseEnter={() => handleCursorSize("true-text")} onMouseLeave={() => handleCursorSize("false-text")}>
+          <motion.img src={heroImg} alt="hero-img" onMouseEnter={() => handleCursorSize("true-text")} onMouseLeave={() => handleCursorSize("false-text")} />
         </motion.div>
       </div>
     </div>

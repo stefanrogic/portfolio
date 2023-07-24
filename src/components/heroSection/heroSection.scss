@@ -12,7 +12,7 @@
     height: 92vh;
   }
 
-  @include rwd("1920px") {
+  @include rwd("1921px") {
     height: 700px;
     margin-top: 50px;
   }
@@ -36,7 +36,7 @@
       transform: none;
     }
 
-    @include rwd("1920px") {
+    @include rwd("1921px") {
       top: 15%;
     }
 
@@ -78,7 +78,7 @@
         margin: 0;
         font-weight: 700;
 
-        cursor: default;
+        cursor: none;
 
         animation: animateH1 0.1s linear infinite;
 
@@ -116,7 +116,7 @@
 
         color: #fd4976;
 
-        cursor: default;
+        cursor: none;
 
         animation: animateP 5s linear infinite;
 

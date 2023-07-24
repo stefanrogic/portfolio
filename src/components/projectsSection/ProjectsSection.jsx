@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 import ProjectContainer from "../projectContainer/ProjectContainer";
 
-const ProjectsSection = ({ onClick, setProject, scrollLock }) => {
+const ProjectsSection = ({ onClick, setProject, scrollLock, handleCursorSize }) => {
   return (
     <div className="default-margin">
       <div className="projects-section">
@@ -20,7 +20,7 @@ const ProjectsSection = ({ onClick, setProject, scrollLock }) => {
 
         <div className="project-list">
           {projects.map((p, i) => (
-            <ProjectContainer key={i} data={p} onClick={onClick} setProject={setProject} scrollLock={scrollLock} />
+            <ProjectContainer key={i} data={p} onClick={onClick} setProject={setProject} scrollLock={scrollLock} handleCursorSize={handleCursorSize} />
           ))}
         </div>
       </div>

@@ -8,7 +8,7 @@ import heroImg from "../../assets/heroImg.png";
 import CodeIcon from "@mui/icons-material/Code";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
-const ProjectContainer = ({ data, onClick, setProject }) => {
+const ProjectContainer = ({ data, onClick, setProject, handleCursorSize }) => {
   return (
     <>
       {/* TODO: ADD DETAILED DESCRIPTION AND IMAGES FOR ALL PROJECTS (POPUP WINDOW) */}
@@ -31,7 +31,10 @@ const ProjectContainer = ({ data, onClick, setProject }) => {
               onClick={() => {
                 setProject(data);
                 onClick(true);
+                handleCursorSize(false);
               }}
+              onMouseEnter={() => handleCursorSize(true)}
+              onMouseLeave={() => handleCursorSize(false)}
             >
               {data.name}
             </motion.h1>
@@ -40,12 +43,17 @@ const ProjectContainer = ({ data, onClick, setProject }) => {
               onClick={() => {
                 setProject(data);
                 onClick(true);
+                handleCursorSize(false);
               }}
+              onMouseEnter={() => handleCursorSize(true)}
+              onMouseLeave={() => handleCursorSize(false)}
             >
               {data.alt}
             </motion.p>
 
-            <p className="project-desc">{data.shortDesc}</p>
+            <p className="project-desc" onMouseEnter={() => handleCursorSize("true-text")} onMouseLeave={() => handleCursorSize("false-text")}>
+              {data.shortDesc}
+            </p>
           </div>
           <div className="buttons">
             <a href={data.demo} target="_blank">
@@ -66,7 +74,10 @@ const ProjectContainer = ({ data, onClick, setProject }) => {
           onClick={() => {
             setProject(data);
             onClick(true);
+            handleCursorSize(false);
           }}
+          onMouseEnter={() => handleCursorSize(true)}
+          onMouseLeave={() => handleCursorSize(false)}
         >
           <motion.img src={data.logo ? data.logo.img : heroImg} alt={data.logo ? data.logo.name : "hero-img"} whileHover={{ scale: 1.1 }} />
         </div>

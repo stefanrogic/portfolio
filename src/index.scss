@@ -33,6 +33,7 @@ $palette: (
 }
 
 :root {
+  cursor: none;
   font-family: "Space Grotesk", sans-serif;
 
   color: map-get($palette, textLight);
@@ -89,6 +90,7 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: none;
 }
 
 button,
@@ -98,7 +100,7 @@ textarea {
 }
 
 button {
-  cursor: pointer;
+  cursor: none;
 }
 
 .default-button {
