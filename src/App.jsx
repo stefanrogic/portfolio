@@ -27,13 +27,13 @@ function App() {
     const cursor = document.querySelector(".cursor");
     const cursorFollower = document.querySelector(".cursor-follower");
 
-    cursor.style.left = `${e.pageX}px`;
-    cursor.style.top = `${e.pageY}px`;
+    cursor.style.left = `${e.pageX - 2}px`;
+    cursor.style.top = `${e.pageY - 2}px`;
 
     setTimeout(() => {
-      cursorFollower.style.left = `${e.pageX - 31.7}px`;
-      cursorFollower.style.top = `${e.pageY - 31.7}px`;
-    }, 70);
+      cursorFollower.style.left = `${e.pageX - 35}px`;
+      cursorFollower.style.top = `${e.pageY - 34.9}px`;
+    }, 100);
   };
 
   const handleCursorSize = (c) => {
